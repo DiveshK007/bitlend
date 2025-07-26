@@ -118,10 +118,10 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                           max={10}
                           {...field}
                           onChange={(e) => {
-                            const value = parseFloat(e.target.value);
+                    <FormItem className="glass-card-subtle rounded-lg p-6 flex flex-row items-center justify-between">
                             if (!isNaN(value)) {
-                              field.onChange(value);
-                            }
+                        <FormLabel className="text-white font-medium text-base">Collateral</FormLabel>
+                        <FormDescription className="text-white/70">
                           }}
                         />
                       </div>

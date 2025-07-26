@@ -12,6 +12,8 @@ import { MarketplaceLoanCard } from '@/components/shared/MarketplaceLoanCard';
 import { useToast } from '@/hooks/use-toast';
 import { Loan } from '@shared/schema';
 import { useUserWallet } from '@/hooks/use-wallet';
+import { DashboardLoading } from '@/components/shared/LoadingStates';
+import { QuickTips, OnboardingTour } from '@/components/shared/ContextualHelp';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -33,6 +35,7 @@ export default function Dashboard() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const { wallet } = useUserWallet();
+  const [showTour, setShowTour] = useState(false);
   
   // Query user stats
   const { data: stats, isLoading: statsLoading } = useQuery({
@@ -67,15 +70,49 @@ export default function Dashboard() {
 
   const recentTransactions = transactions?.slice(0, 3) || [];
   const highlightedMarketplaceLoans = marketplaceLoans?.slice(0, 4) || [];
+
+  const tourSteps = [
+    {
+      target: '.portfolio-overview',
+      title: 'Portfolio Overview',
+      content: 'Here you can see your lending and borrowing statistics at a glance.',
+      position: 'bottom' as const,
+    },
+    {
+      target: '.active-loans',
+      title: 'Active Loans',
+      content: 'Monitor your current loans and their status here.',
+      position: 'top' as const,
+    },
+    {
+      target: '.marketplace-opportunities',
+      title: 'Marketplace',
+      content: 'Discover new lending and borrowing opportunities.',
+      position: 'top' as const,
+    },
+  ];
+
+  // Show loading state
+  if (statsLoading && loansLoading && transactionsLoading && marketplaceLoading) {
+    return <DashboardLoading />;
+  }
+
+  // First-time user tour
+  React.useEffect(() => {
+    const hasSeenTour = localStorage.getItem('hasSeenDashboardTour');
+    if (!hasSeenTour) {
+      setTimeout(() => setShowTour(true), 2000);
+    }
+  }, []);
+
+  const handleTourClose = () => {
+    setShowTour(false);
+    localStorage.setItem('hasSeenDashboardTour', 'true');
+  };
   
   return (
     <div className="page-container">
       <div className="content-wrapper">
-      {/* Floating background orbs */}
-      <div className="floating-orb"></div>
-      <div className="floating-orb"></div>
-      <div className="floating-orb"></div>
-      
         <div className="relative z-10">
         {/* Hero Welcome Section */}
         <motion.div
@@ -84,7 +121,7 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="glass-card p-8 hero-gradient relative overflow-hidden">
+          <div className="glass-card glass-card-glow p-8 hero-gradient relative overflow-hidden">
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between">
               <div className="text-center lg:text-left mb-6 lg:mb-0">
                 <h1 className="text-5xl lg:text-6xl font-bold mb-4">
@@ -95,7 +132,7 @@ export default function Dashboard() {
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link href="/marketplace">
-                    <button className="glass-button text-lg px-8 py-4 w-[220px] h-[60px] flex items-center justify-center">
+                    <button className="glass-button text-lg px-8 py-4 w-[220px] h-[60px] flex items-center justify-center micro-bounce">
                       <i className="ri-store-2-line mr-3"></i>
                       Explore Marketplace
                     </button>
@@ -113,7 +150,7 @@ export default function Dashboard() {
         </motion.div>
         
         {/* Stats Overview */}
-        <motion.div 
+        <motion.div
           className="mb-8"
           variants={staggerContainer}
           initial="hidden"
@@ -121,7 +158,7 @@ export default function Dashboard() {
         >
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
             <h2 className="text-3xl font-bold mb-4 lg:mb-0 text-white">Portfolio Overview</h2>
-            <div className="glass rounded-full px-6 py-3 text-sm">
+            <div className="glass rounded-full px-6 py-3 text-sm portfolio-overview">
               <span className="font-medium flex items-center text-blue-400">
                 <i className="ri-time-line mr-2"></i> 
                 Last updated: Just now
@@ -131,7 +168,7 @@ export default function Dashboard() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div variants={fadeIn}>
-              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+              <div className="glass-card glass-card-glow p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
                 <div className="flex items-center justify-between mb-4">
                   <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
                     <i className="ri-arrow-down-line text-2xl text-blue-400"></i>
@@ -155,7 +192,7 @@ export default function Dashboard() {
             </motion.div>
             
             <motion.div variants={fadeIn}>
-              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+              <div className="glass-card glass-card-glow p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
                 <div className="flex items-center justify-between mb-4">
                   <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
                     <i className="ri-arrow-up-line text-2xl text-purple-400"></i>
@@ -179,7 +216,7 @@ export default function Dashboard() {
             </motion.div>
             
             <motion.div variants={fadeIn}>
-              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+              <div className="glass-card glass-card-glow p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
                 <div className="flex items-center justify-between mb-4">
                   <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
                     <i className="ri-time-line text-2xl text-green-400"></i>
@@ -203,7 +240,7 @@ export default function Dashboard() {
             </motion.div>
             
             <motion.div variants={fadeIn}>
-              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+              <div className="glass-card glass-card-glow p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
                 <div className="flex items-center justify-between mb-4">
                   <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
                     <i className="ri-percent-line text-2xl text-yellow-400"></i>
@@ -230,7 +267,7 @@ export default function Dashboard() {
         
         {/* Active Loans Section */}
         <motion.div 
-          className="mb-12"
+          className="mb-12 active-loans"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
@@ -244,7 +281,7 @@ export default function Dashboard() {
             </Link>
           </div>
           
-          <div className="glass-card p-8">
+          <div className="glass-card glass-card-glow p-8">
             {loansLoading ? (
               <div className="py-16 text-center">
                 <div className="loading-spinner mx-auto mb-6"></div>
@@ -252,7 +289,7 @@ export default function Dashboard() {
               </div>
             ) : activeLoans && activeLoans.length === 0 ? (
               <div className="empty-state">
-                <div className="glass rounded-3xl w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                <div className="glass rounded-3xl w-24 h-24 flex items-center justify-center mx-auto mb-6 micro-bounce">
                   <i className="ri-inbox-line text-4xl" style={{ color: 'rgba(255, 255, 255, 0.5)' }}></i>
                 </div>
                 <h3>No active loans</h3>
@@ -274,7 +311,7 @@ export default function Dashboard() {
         
         {/* Recent Activity Grid */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 marketplace-opportunities"
           initial="hidden"
           animate="visible"
           variants={{
@@ -288,7 +325,7 @@ export default function Dashboard() {
         >
           {/* Recent Transactions */}
           <motion.div className="lg:col-span-1" variants={fadeIn}>
-            <div className="glass-card p-6 h-full">
+            <div className="glass-card glass-card-glow p-6 h-full">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center">
                   <div className="glass rounded-xl p-2 mr-3">
@@ -330,7 +367,7 @@ export default function Dashboard() {
           
           {/* Marketplace Opportunities */}
           <motion.div className="lg:col-span-2" variants={fadeIn}>
-            <div className="glass-card p-6 h-full">
+            <div className="glass-card glass-card-glow p-6 h-full">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center">
                   <div className="glass rounded-xl p-2 mr-3">
@@ -381,6 +418,14 @@ export default function Dashboard() {
         </motion.div>
       </div>
       </div>
+      
+      <QuickTips />
+      
+      <OnboardingTour
+        isOpen={showTour}
+        onClose={handleTourClose}
+        steps={tourSteps}
+      />
     </div>
   );
 }
