@@ -227,9 +227,4 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
           </form>
         </Form>
       </DialogContent>
-              )
-              }
-    </Dialog>
-  )
-  );
 }
