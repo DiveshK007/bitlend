@@ -152,9 +152,9 @@ export default function Settings() {
                       name="username"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="form-label">Username</FormLabel>
+                          <FormLabel className="text-gray-900 font-medium">Username</FormLabel>
                           <FormControl>
-                            <input className="glass-input w-full" placeholder="Your username" {...field} />
+                            <input className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900" placeholder="Your username" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -166,9 +166,9 @@ export default function Settings() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="form-label">Email</FormLabel>
+                          <FormLabel className="text-gray-900 font-medium">Email</FormLabel>
                           <FormControl>
-                            <input className="glass-input w-full" placeholder="Your email address" {...field} />
+                            <input className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900" placeholder="Your email address" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -176,18 +176,18 @@ export default function Settings() {
                     />
                     
                     <div>
-                      <FormLabel className="form-label">Wallet Address</FormLabel>
-                      <div className="flex items-center p-2 glass rounded-md">
-                        <span className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{shortenWalletAddress(user?.walletAddress || "")}</span>
+                      <FormLabel className="text-gray-900 font-medium">Wallet Address</FormLabel>
+                      <div className="flex items-center p-3 border border-gray-300 rounded-md bg-gray-50">
+                        <span className="text-sm text-gray-600">{shortenWalletAddress(user?.walletAddress || "")}</span>
                       </div>
-                      <FormDescription className="form-description">
+                      <FormDescription className="text-gray-600">
                         Your connected wallet address
                       </FormDescription>
                     </div>
                     
-                    <button type="submit" className="glass-button" disabled={isSubmitting}>
+                    <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white" disabled={isSubmitting}>
                       {isSubmitting ? "Saving..." : "Save Changes"}
-                    </button>
+                    </Button>
                   </form>
                 </Form>
               </CardContent>

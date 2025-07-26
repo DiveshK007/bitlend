@@ -33,8 +33,8 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[550px] glass-white">
         <DialogHeader>
-          <DialogTitle>Loan Details</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-gray-900 font-bold">Loan Details</DialogTitle>
+          <DialogDescription className="text-gray-700">
             View details and status of your {isBorrowing ? "borrowed" : "lent"} loan
           </DialogDescription>
         </DialogHeader>
@@ -42,14 +42,14 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
         <div className="space-y-6">
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-sm text-muted-foreground">Loan Amount</p>
+              <p className="text-sm text-gray-600">Loan Amount</p>
               <p className="text-2xl font-bold flex items-center">
                 <BitcoinIcon className="text-primary mr-1" size={20} />
                 {formatBTC(loan.amount)}
               </p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-muted-foreground">Status</p>
+              <p className="text-sm text-gray-600">Status</p>
               <p className={`text-sm py-1 px-3 rounded-full font-medium inline-block ${statusClass}`}>
                 {loan.status.charAt(0).toUpperCase() + loan.status.slice(1)}
               </p>
@@ -58,20 +58,20 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
           
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <p className="text-sm text-muted-foreground">Interest Rate</p>
-              <p className="font-medium">{loan.interest}% APR</p>
+              <p className="text-sm text-gray-600">Interest Rate</p>
+              <p className="font-medium text-gray-900">{loan.interest}% APR</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Duration</p>
-              <p className="font-medium">{loan.durationMonths} months</p>
+              <p className="text-sm text-gray-600">Duration</p>
+              <p className="font-medium text-gray-900">{loan.durationMonths} months</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Collateral Required</p>
-              <p className="font-medium">{loan.hasCollateral ? 'Yes' : 'No'}</p>
+              <p className="text-sm text-gray-600">Collateral Required</p>
+              <p className="font-medium text-gray-900">{loan.hasCollateral ? 'Yes' : 'No'}</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Created</p>
-              <p className="font-medium">{formatDateRelative(loan.createdAt)}</p>
+              <p className="text-sm text-gray-600">Created</p>
+              <p className="font-medium text-gray-900">{formatDateRelative(loan.createdAt)}</p>
             </div>
           </div>
           
@@ -79,20 +79,20 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
           
           <div className="space-y-3">
             <div className="flex justify-between">
-              <p className="text-sm text-muted-foreground">Principal</p>
-              <p className="font-medium">{formatBTC(loan.amount)}</p>
+              <p className="text-sm text-gray-600">Principal</p>
+              <p className="font-medium text-gray-900">{formatBTC(loan.amount)}</p>
             </div>
             <div className="flex justify-between">
-              <p className="text-sm text-muted-foreground">Interest</p>
-              <p className="font-medium">{formatBTC(interestAmount)}</p>
+              <p className="text-sm text-gray-600">Interest</p>
+              <p className="font-medium text-gray-900">{formatBTC(interestAmount)}</p>
             </div>
             <div className="flex justify-between">
-              <p className="text-sm font-medium">Total Repayment</p>
-              <p className="font-medium">{formatBTC(totalRepayment)}</p>
+              <p className="text-sm font-medium text-gray-900">Total Repayment</p>
+              <p className="font-medium text-gray-900">{formatBTC(totalRepayment)}</p>
             </div>
             <div className="flex justify-between">
-              <p className="text-sm text-muted-foreground">Monthly Payment</p>
-              <p className="font-medium">{formatBTC(monthlyPayment)}</p>
+              <p className="text-sm text-gray-600">Monthly Payment</p>
+              <p className="font-medium text-gray-900">{formatBTC(monthlyPayment)}</p>
             </div>
           </div>
           
@@ -104,16 +104,16 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
               </div>
               <Progress value={paymentProgress} className="h-2" />
               <div className="flex justify-between text-sm mt-2">
-                <span className="text-muted-foreground">Remaining</span>
-                <span className="font-medium">{formatBTC(remainingAmount)}</span>
+                <span className="text-gray-600">Remaining</span>
+                <span className="font-medium text-gray-900">{formatBTC(remainingAmount)}</span>
               </div>
             </div>
           )}
           
           {isBorrowing && loan.status === 'active' && (
-            <div className="bg-muted p-3 rounded-md text-sm">
-              <p className="font-medium mb-1">Payment Instructions</p>
-              <p className="text-muted-foreground">
+            <div className="bg-gray-50 p-3 rounded-md text-sm">
+              <p className="font-medium mb-1 text-gray-900">Payment Instructions</p>
+              <p className="text-gray-600">
                 Please make your monthly payments on time to maintain a good borrower rating
                 and avoid any penalties.
               </p>
@@ -123,11 +123,11 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
         
         <DialogFooter className="gap-2 sm:gap-0">
           {isBorrowing && loan.status === 'active' && onRepay && (
-            <Button onClick={onRepay}>
+            <Button onClick={onRepay} className="bg-blue-600 hover:bg-blue-700 text-white">
               Make Repayment
             </Button>
           )}
-          <Button variant="outline" onClick={onClose}>
+          <Button variant="outline" onClick={onClose} className="text-gray-700 border-gray-300 hover:bg-gray-50">
             Close
           </Button>
         </DialogFooter>

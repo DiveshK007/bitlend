@@ -86,8 +86,8 @@ export function RepaymentForm({ loan, isOpen, onClose, onSuccess }: RepaymentFor
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[400px] glass-white">
         <DialogHeader>
-          <DialogTitle>Loan Repayment</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-gray-900 font-bold">Loan Repayment</DialogTitle>
+          <DialogDescription className="text-gray-700">
             Make a repayment for your {formatBTC(loan.amount)} loan.
           </DialogDescription>
         </DialogHeader>
@@ -96,24 +96,24 @@ export function RepaymentForm({ loan, isOpen, onClose, onSuccess }: RepaymentFor
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Total to be paid:</span>
-                <span className="font-medium">{formatBTC(totalToBePaid)}</span>
+                <span className="text-gray-600">Total to be paid:</span>
+                <span className="font-medium text-gray-900">{formatBTC(totalToBePaid)}</span>
               </div>
               
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Already paid:</span>
-                <span className="font-medium">{formatBTC(alreadyPaid)}</span>
+                <span className="text-gray-600">Already paid:</span>
+                <span className="font-medium text-gray-900">{formatBTC(alreadyPaid)}</span>
               </div>
               
               <div className="flex justify-between text-sm font-medium">
-                <span>Remaining balance:</span>
-                <span>{formatBTC(remainingAmount)}</span>
+                <span className="text-gray-900">Remaining balance:</span>
+                <span className="text-gray-900">{formatBTC(remainingAmount)}</span>
               </div>
             </div>
             
-            <div className="p-3 bg-muted rounded-md flex justify-between items-center">
-              <span className="text-sm">Your wallet balance:</span>
-              <span className="font-medium">{formatBTC(userBalance)}</span>
+            <div className="p-3 bg-gray-50 rounded-md flex justify-between items-center">
+              <span className="text-sm text-gray-600">Your wallet balance:</span>
+              <span className="font-medium text-gray-900">{formatBTC(userBalance)}</span>
             </div>
             
             <FormField
@@ -121,10 +121,11 @@ export function RepaymentForm({ loan, isOpen, onClose, onSuccess }: RepaymentFor
               name="amount"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Repayment Amount (BTC)</FormLabel>
+                  <FormLabel className="text-gray-900 font-medium">Repayment Amount (BTC)</FormLabel>
                   <FormControl>
-                    <Input
+                    <input
                       type="number"
+                      className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900"
                       step={0.001}
                       min={0.001}
                       max={userBalance}
@@ -137,7 +138,7 @@ export function RepaymentForm({ loan, isOpen, onClose, onSuccess }: RepaymentFor
                       }}
                     />
                   </FormControl>
-                  <FormDescription>
+                  <FormDescription className="text-gray-600">
                     Enter the amount you want to repay
                   </FormDescription>
                   <FormMessage />
@@ -146,11 +147,12 @@ export function RepaymentForm({ loan, isOpen, onClose, onSuccess }: RepaymentFor
             />
             
             <div className="flex gap-3 justify-end">
-              <Button type="button" variant="outline" onClick={onClose}>
+              <Button type="button" variant="outline" onClick={onClose} className="text-gray-700 border-gray-300 hover:bg-gray-50">
                 Cancel
               </Button>
               <Button 
                 type="submit" 
+                className="bg-blue-600 hover:bg-blue-700 text-white"
                 disabled={isSubmitting || form.watch('amount') > userBalance}
               >
                 {isSubmitting ? "Processing..." : "Make Repayment"}

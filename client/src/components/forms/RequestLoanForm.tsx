@@ -83,11 +83,11 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-[600px] glass-card border-0 bg-transparent">
+      <DialogContent className="sm:max-w-[600px] glass-white">
         <div className="relative">
           <DialogHeader className="mb-6">
-            <DialogTitle className="text-2xl font-bold text-white">Request a Loan</DialogTitle>
-            <DialogDescription className="text-white/70">
+            <DialogTitle className="text-2xl font-bold text-gray-900">Request a Loan</DialogTitle>
+            <DialogDescription className="text-gray-700">
               Create a loan request to borrow Bitcoin from lenders in our marketplace.
             </DialogDescription>
           </DialogHeader>
@@ -99,7 +99,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                 name="amount"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white font-medium">Loan Amount (BTC)</FormLabel>
+                    <FormLabel className="text-gray-900 font-medium">Loan Amount (BTC)</FormLabel>
                     <FormControl>
                       <div className="space-y-4">
                         <Slider
@@ -112,7 +112,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                         />
                         <input
                           type="number"
-                          className="glass-input w-full text-center text-xl font-bold"
+                          className="w-full text-center text-xl font-bold p-3 border border-gray-300 rounded-md bg-white text-gray-900"
                           step={0.01}
                           min={0.01}
                           max={10}
@@ -126,7 +126,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                         />
                       </div>
                     </FormControl>
-                    <FormDescription className="text-white/60">
+                    <FormDescription className="text-gray-600">
                       Amount of Bitcoin you want to borrow
                     </FormDescription>
                     <FormMessage />
@@ -140,7 +140,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                   name="interest"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white font-medium">Interest Rate (%)</FormLabel>
+                      <FormLabel className="text-gray-900 font-medium">Interest Rate (%)</FormLabel>
                       <FormControl>
                         <div className="space-y-4">
                           <Slider
@@ -153,7 +153,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                           />
                           <input
                             type="number"
-                            className="glass-input w-full text-center font-bold"
+                            className="w-full text-center font-bold p-3 border border-gray-300 rounded-md bg-white text-gray-900"
                             step={0.1}
                             min={1}
                             max={15}
@@ -167,7 +167,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                           />
                         </div>
                       </FormControl>
-                      <FormDescription className="text-white/60">
+                      <FormDescription className="text-gray-600">
                         Yearly interest rate you're willing to pay
                       </FormDescription>
                       <FormMessage />
@@ -180,7 +180,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                   name="durationMonths"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white font-medium">Duration (Months)</FormLabel>
+                      <FormLabel className="text-gray-900 font-medium">Duration (Months)</FormLabel>
                       <FormControl>
                         <div className="space-y-4">
                           <Slider
@@ -193,7 +193,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                           />
                           <input
                             type="number"
-                            className="glass-input w-full text-center font-bold"
+                            className="w-full text-center font-bold p-3 border border-gray-300 rounded-md bg-white text-gray-900"
                             min={1}
                             max={36}
                             {...field}
@@ -206,7 +206,7 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                           />
                         </div>
                       </FormControl>
-                      <FormDescription className="text-white/60">
+                      <FormDescription className="text-gray-600">
                         Loan repayment period
                       </FormDescription>
                       <FormMessage />
@@ -219,10 +219,10 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                 control={form.control}
                 name="hasCollateral"
                 render={({ field }) => (
-                  <FormItem className="glass p-6 rounded-2xl flex flex-row items-center justify-between">
+                  <FormItem className="p-6 border border-gray-300 rounded-lg bg-gray-50 flex flex-row items-center justify-between">
                     <div className="space-y-1">
-                      <FormLabel className="text-white font-medium text-base">Collateral</FormLabel>
-                      <FormDescription className="text-white/60">
+                      <FormLabel className="text-gray-900 font-medium text-base">Collateral</FormLabel>
+                      <FormDescription className="text-gray-600">
                         Are you offering collateral for this loan?
                       </FormDescription>
                     </div>
@@ -236,32 +236,33 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                 )}
               />
               
-              <div className="glass p-6 rounded-2xl space-y-3">
-                <h3 className="text-white font-medium mb-4">Loan Summary</h3>
-                <div className="flex justify-between text-white/70">
+              <div className="p-6 border border-gray-300 rounded-lg bg-gray-50 space-y-3">
+                <h3 className="text-gray-900 font-medium mb-4">Loan Summary</h3>
+                <div className="flex justify-between text-gray-600">
                   <span>Total Repayment</span>
-                  <span className="font-bold text-white">{formatBTC(repaymentAmount)}</span>
+                  <span className="font-bold text-gray-900">{formatBTC(repaymentAmount)}</span>
                 </div>
-                <div className="flex justify-between text-white/70">
+                <div className="flex justify-between text-gray-600">
                   <span>Monthly Payment</span>
-                  <span className="font-bold text-white">{formatBTC(monthlyPayment)}</span>
+                  <span className="font-bold text-gray-900">{formatBTC(monthlyPayment)}</span>
                 </div>
               </div>
               
               <div className="flex gap-4 justify-end pt-4">
-                <button 
+                <Button 
                   type="button" 
                   onClick={onClose}
-                  className="glass rounded-2xl px-8 py-3 text-white/70 hover:text-white font-medium transition-all duration-300 hover:bg-white/10"
+                  variant="outline"
+                  className="px-8 py-3 text-gray-700 border-gray-300 hover:bg-gray-50"
                 >
                   Cancel
-                </button>
-                <button 
+                </Button>
+                <Button 
                   type="submit"
-                  className="glass-button px-8 py-3 text-lg font-medium"
+                  className="px-8 py-3 text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white"
                 >
                   Create Loan Request
-                </button>
+                </Button>
               </div>
             </form>
           </Form>

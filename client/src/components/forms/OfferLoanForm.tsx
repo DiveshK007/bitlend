@@ -85,8 +85,8 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-[500px] glass-white">
         <DialogHeader>
-          <DialogTitle>Offer a Loan</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-gray-900 font-bold">Offer a Loan</DialogTitle>
+          <DialogDescription className="text-gray-700">
             Create a loan offer to lend your Bitcoin to borrowers.
           </DialogDescription>
         </DialogHeader>
@@ -98,7 +98,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               name="amount"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Loan Amount (BTC)</FormLabel>
+                  <FormLabel className="text-gray-900 font-medium">Loan Amount (BTC)</FormLabel>
                   <FormControl>
                     <div className="flex items-center space-x-4">
                       <Slider
@@ -125,7 +125,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
                       />
                     </div>
                   </FormControl>
-                  <FormDescription>
+                  <FormDescription className="text-gray-600">
                     Amount of Bitcoin you want to lend
                   </FormDescription>
                   <FormMessage />
@@ -138,7 +138,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               name="interest"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Interest Rate (%)</FormLabel>
+                  <FormLabel className="text-gray-900 font-medium">Interest Rate (%)</FormLabel>
                   <FormControl>
                     <div className="flex items-center space-x-4">
                       <Slider
@@ -165,7 +165,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
                       />
                     </div>
                   </FormControl>
-                  <FormDescription>
+                  <FormDescription className="text-gray-600">
                     Yearly interest rate you want to earn
                   </FormDescription>
                   <FormMessage />
@@ -178,7 +178,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               name="durationMonths"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Duration (Months)</FormLabel>
+                  <FormLabel className="text-gray-900 font-medium">Duration (Months)</FormLabel>
                   <FormControl>
                     <div className="flex items-center space-x-4">
                       <Slider
@@ -204,7 +204,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
                       />
                     </div>
                   </FormControl>
-                  <FormDescription>
+                  <FormDescription className="text-gray-600">
                     Loan repayment period
                   </FormDescription>
                   <FormMessage />
@@ -218,8 +218,8 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               render={({ field }) => (
                 <FormItem className="flex flex-row items-center justify-between p-4 border rounded-md">
                   <div className="space-y-0.5">
-                    <FormLabel>Require Collateral</FormLabel>
-                    <FormDescription>
+                    <FormLabel className="text-gray-900 font-medium">Require Collateral</FormLabel>
+                    <FormDescription className="text-gray-600">
                       Require borrowers to provide collateral?
                     </FormDescription>
                   </div>
@@ -233,22 +233,22 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               )}
             />
             
-            <div className="p-4 border rounded-md bg-muted">
+            <div className="p-4 border rounded-md bg-gray-50">
               <div className="flex justify-between mb-2">
-                <span className="text-sm text-muted-foreground">Expected Return</span>
-                <span className="font-medium">{formatBTC(expectedReturn)}</span>
+                <span className="text-sm text-gray-600">Expected Return</span>
+                <span className="font-medium text-gray-900">{formatBTC(expectedReturn)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-muted-foreground">Profit</span>
-                <span className="font-medium text-success">{formatBTC(profitAmount)}</span>
+                <span className="text-sm text-gray-600">Profit</span>
+                <span className="font-medium text-green-600">{formatBTC(profitAmount)}</span>
               </div>
             </div>
             
             <div className="flex gap-3 justify-end">
-              <Button type="button" variant="outline" onClick={onClose}>
+              <Button type="button" variant="outline" onClick={onClose} className="text-gray-700 border-gray-300 hover:bg-gray-50">
                 Cancel
               </Button>
-              <Button type="submit">
+              <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
                 Create Loan Offer
               </Button>
             </div>

@@ -81,17 +81,17 @@ export function DepositForm({ isOpen, onClose }: DepositFormProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[400px] glass-white">
         <DialogHeader>
-          <DialogTitle>Deposit Bitcoin</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-gray-900 font-bold">Deposit Bitcoin</DialogTitle>
+          <DialogDescription className="text-gray-700">
             Add funds to your BitLend account from your connected wallet.
           </DialogDescription>
         </DialogHeader>
         
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="p-3 bg-muted rounded-md flex justify-between items-center">
-              <span className="text-sm">Available in wallet:</span>
-              <span className="font-medium">{formatBTC(walletBalance)}</span>
+            <div className="p-3 bg-gray-50 rounded-md flex justify-between items-center">
+              <span className="text-sm text-gray-600">Available in wallet:</span>
+              <span className="font-medium text-gray-900">{formatBTC(walletBalance)}</span>
             </div>
             
             <FormField
@@ -99,10 +99,11 @@ export function DepositForm({ isOpen, onClose }: DepositFormProps) {
               name="amount"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Amount (BTC)</FormLabel>
+                  <FormLabel className="text-gray-900 font-medium">Amount (BTC)</FormLabel>
                   <FormControl>
-                    <Input
+                    <input
                       type="number"
+                      className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900"
                       step={0.001}
                       min={0.001}
                       max={walletBalance}
@@ -115,7 +116,7 @@ export function DepositForm({ isOpen, onClose }: DepositFormProps) {
                       }}
                     />
                   </FormControl>
-                  <FormDescription>
+                  <FormDescription className="text-gray-600">
                     Enter the amount you want to deposit
                   </FormDescription>
                   <FormMessage />
@@ -123,17 +124,18 @@ export function DepositForm({ isOpen, onClose }: DepositFormProps) {
               )}
             />
             
-            <div className="flex justify-between text-sm p-3 border rounded-md">
-              <span className="text-muted-foreground">Approximate USD value:</span>
-              <span className="font-medium">{formatUSD(usdValue)}</span>
+            <div className="flex justify-between text-sm p-3 border border-gray-300 rounded-md bg-gray-50">
+              <span className="text-gray-600">Approximate USD value:</span>
+              <span className="font-medium text-gray-900">{formatUSD(usdValue)}</span>
             </div>
             
             <div className="flex gap-3 justify-end">
-              <Button type="button" variant="outline" onClick={onClose}>
+              <Button type="button" variant="outline" onClick={onClose} className="text-gray-700 border-gray-300 hover:bg-gray-50">
                 Cancel
               </Button>
               <Button 
                 type="submit" 
+                className="bg-blue-600 hover:bg-blue-700 text-white"
                 disabled={isSubmitting || depositAmount > walletBalance}
               >
                 {isSubmitting ? "Processing..." : "Deposit Funds"}
