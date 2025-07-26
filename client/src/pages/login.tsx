@@ -109,7 +109,7 @@ export default function Login() {
                         <FormLabel className="text-white font-medium">Email</FormLabel>
                         <FormControl>
                           <input 
-                            className="glass-input w-full"
+                            className="glass-input w-full py-4 px-5 text-lg"
                             placeholder="your@email.com" 
                             {...field} 
                           />
@@ -128,7 +128,7 @@ export default function Login() {
                         <FormControl>
                           <input 
                             type="password" 
-                            className="glass-input w-full"
+                            className="glass-input w-full py-4 px-5 text-lg"
                             placeholder="••••••••" 
                             {...field} 
                           />

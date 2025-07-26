@@ -198,6 +198,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;
+  padding: 16px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 56px;
 }
 
 .glass-input::placeholder {
