@@ -26,7 +26,7 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md glass-card border-0 bg-transparent fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] data-[state=open]:animate-none data-[state=closed]:animate-none shadow-2xl">
+      <DialogContent className="sm:max-w-md glass-card border-0 bg-transparent data-[state=open]:animate-none data-[state=closed]:animate-none shadow-2xl">
         <DialogHeader>
           <DialogTitle className="text-white text-xl font-bold text-center mb-2">Connect Your Wallet</DialogTitle>
           <DialogDescription className="text-white/80 text-center">
@@ -36,7 +36,7 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
         
         <div className="space-y-4 my-8">
           <Button 
-            className="w-full justify-between p-6 text-base font-medium h-auto glass-button text-white border-0 hover:bg-white/20 transition-all duration-300"
+            className="w-full justify-between p-6 text-base font-medium h-auto glass-button border-0 hover:bg-white/20 transition-all duration-300"
             onClick={() => handleConnect('MetaMask')}
             disabled={isConnecting}
           >
@@ -59,35 +59,35 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
           </Button>
           
           <Button 
-            className="w-full justify-between p-6 text-base font-medium h-auto glass-button text-white/50 border-0 cursor-not-allowed"
+            className="w-full justify-between p-6 text-base font-medium h-auto glass-button border-0 cursor-not-allowed opacity-50"
             disabled={true}
           >
             <div className="flex items-center">
               <i className="ri-wallet-3-line text-white/50 text-2xl mr-4"></i>
-              <span className="font-semibold text-white/50">Bitcoin Core</span>
+              <span className="font-semibold text-white">Bitcoin Core</span>
             </div>
-            <i className="ri-arrow-right-line text-white/30"></i>
+            <i className="ri-arrow-right-line text-white/50"></i>
           </Button>
           
           <Button 
-            className="w-full justify-between p-6 text-base font-medium h-auto glass-button text-white/50 border-0 cursor-not-allowed"
+            className="w-full justify-between p-6 text-base font-medium h-auto glass-button border-0 cursor-not-allowed opacity-50"
             disabled={true}
           >
             <div className="flex items-center">
               <i className="ri-safe-2-line text-white/50 text-2xl mr-4"></i>
-              <span className="font-semibold text-white/50">Hardware Wallet</span>
+              <span className="font-semibold text-white">Hardware Wallet</span>
             </div>
-            <i className="ri-arrow-right-line text-white/30"></i>
+            <i className="ri-arrow-right-line text-white/50"></i>
           </Button>
         </div>
         
-        <div className="text-center mt-6">
+        <div className="text-center mt-8">
           <p className="text-sm text-white/70 mb-3">Don't have a wallet?</p>
           <a 
             href="https://metamask.io/download/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300 underline"
+            className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300 underline text-sm"
           >
             Learn how to create one
           </a>
