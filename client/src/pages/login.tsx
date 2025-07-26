@@ -136,7 +136,8 @@ export default function Login() {
               </TabsList>
             </div>
             
-            <TabsContent value="email">
+            <>
+              <TabsContent value="email">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -224,9 +225,9 @@ export default function Login() {
                   </p>
                 </div>
               </motion.div>
-            </TabsContent>
+              </TabsContent>
             
-            <TabsContent value="biometric">
+              <TabsContent value="biometric">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -252,9 +253,9 @@ export default function Login() {
                   </p>
                 </div>
               </motion.div>
-            </TabsContent>
+              </TabsContent>
             
-            <TabsContent value="wallet">
+              <TabsContent value="wallet">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -286,7 +287,8 @@ export default function Login() {
                   </p>
                 </div>
               </motion.div>
-            </TabsContent>
+              </TabsContent>
+            </>
           </Tabs>
           
           {/* Security Features Notice */}
