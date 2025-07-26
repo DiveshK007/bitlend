@@ -80,6 +80,51 @@ body {
   overflow-x: hidden;
 }
 
+/* Layout Fixes */
+.main-content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding-left: 320px;
+  }
+}
+
+.page-container {
+  padding: 24px;
+  width: 100%;
+  max-width: none;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.content-section {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
 /* Glassmorphism Base Classes */
 .glass-card {
   background: rgba(255, 255, 255, 0.08);
@@ -202,13 +247,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Responsive Utilities */
-.content-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 24px;
 }
 
 /* Custom Scrollbar */
@@ -365,43 +403,4 @@ body {
 
 .bg-secondary {
   background: rgba(255, 255, 255, 0.1);
-}
-
-/* Layout Fixes */
-.main-content {
-  min-height: 100vh;
-  padding-left: 0;
-}
-
-@media (min-width: 1024px) {
-  .main-content {
-    padding-left: 320px;
-  }
-}
-
-.page-container {
-  padding: 24px;
-  width: 100%;
-  max-width: none;
-}
-
-.content-section {
-  margin-bottom: 32px;
-}
-
-.section-header {
-  margin-bottom: 24px;
-}
-
-.section-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.section-subtitle {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.5;
 }
