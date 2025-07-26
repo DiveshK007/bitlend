@@ -89,11 +89,9 @@ export default function Wallet() {
                     </div>
                   ) : (
                     <button 
-                      className="w-full" 
                       onClick={() => setIsWalletModalOpen(true)}
                       disabled={isConnecting}
-                      className="w-full glass-button-primary p-3 rounded-md font-medium"
-                    >
+                      className="w-full glass-button-primary p-3 rounded-md font-medium">
                       <i className="ri-wallet-3-line mr-2"></i>
                       {isConnecting ? "Connecting..." : "Connect Wallet"}
                     </button>
