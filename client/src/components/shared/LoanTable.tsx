@@ -46,14 +46,14 @@ export function LoanTable({ loans, onViewDetails }: LoanTableProps) {
               <TableCell className="table-cell">
                 <div className="flex items-center">
                   <BitcoinIcon className="mr-1" style={{ color: '#007aff' }} size={16} />
-                  <span className="font-medium">{formatBTC(loan.amount)}</span>
+                  <span className="font-medium text-gray-900">{formatBTC(loan.amount)}</span>
                 </div>
               </TableCell>
               <TableCell className="table-cell">
-                <span className="font-medium">{loan.interest}%</span>
+                <span className="font-medium text-gray-900">{loan.interest}%</span>
               </TableCell>
               <TableCell className="table-cell">
-                <span>{loan.durationMonths} months</span>
+                <span className="text-gray-900">{loan.durationMonths} months</span>
               </TableCell>
               <TableCell className="table-cell">
                 <span className={`text-xs py-1 px-2 rounded-full font-medium ${getLoanStatusBadgeClass(loan.status)}`}>

@@ -42,7 +42,7 @@ export function LoanCard({
           <span className={`text-xs py-2 px-3 rounded-full font-medium ${typeClass} glass`}>
             {isBorrowing ? 'Borrowed' : 'Lent'}
           </span>
-          <h3 className="font-bold mt-3 flex items-center text-xl" style={{ color: '#ffffff' }}>
+          <h3 className="font-bold mt-3 flex items-center text-xl text-gray-900">
             <BitcoinIcon className="mr-2" style={{ color: '#007aff' }} size={20} />
             <span>{formatBTC(loan.amount)}</span>
           </h3>
@@ -53,10 +53,10 @@ export function LoanCard({
         </div>
       </div>
       
-      <div className="grid grid-cols-3 gap-4 text-sm mb-6" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
+      <div className="grid grid-cols-3 gap-4 text-sm mb-6 text-gray-600">
         <div>
           <p className="mb-1">Duration</p>
-          <p className="font-medium" style={{ color: '#ffffff' }}>{loan.durationMonths} months</p>
+          <p className="font-medium text-gray-900">{loan.durationMonths} months</p>
         </div>
         <div>
           <p className="mb-1">Status</p>
@@ -66,12 +66,12 @@ export function LoanCard({
         </div>
         <div>
           <p className="mb-1">Collateral</p>
-          <p className="font-medium" style={{ color: '#ffffff' }}>{loan.hasCollateral ? 'Yes' : 'No'}</p>
+          <p className="font-medium text-gray-900">{loan.hasCollateral ? 'Yes' : 'No'}</p>
         </div>
       </div>
       
       {loan.createdAt && (
-        <p className="text-xs mb-4" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+        <p className="text-xs mb-4 text-gray-500">
           Created on {new Date(loan.createdAt).toLocaleDateString()}
         </p>
       )}

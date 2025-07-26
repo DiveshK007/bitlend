@@ -57,7 +57,7 @@ export default function Wallet() {
           <motion.div variants={fadeIn}>
             <Card className="h-full">
               <CardHeader>
-                <CardTitle style={{ color: '#ffffff' }}>Wallet Balance</CardTitle>
+                <CardTitle className="text-gray-900">Wallet Balance</CardTitle>
                 <CardDescription>
                   Your available Bitcoin balance
                 </CardDescription>
@@ -80,8 +80,8 @@ export default function Wallet() {
                   {wallet.isConnected ? (
                     <div className="flex items-center justify-between p-3 glass rounded-md">
                       <div>
-                        <div className="text-sm font-medium" style={{ color: '#ffffff' }}>Connected Wallet</div>
-                        <div className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{shortenWalletAddress(wallet.address || '')}</div>
+                        <div className="text-sm font-medium text-gray-900">Connected Wallet</div>
+                        <div className="text-sm text-gray-600">{shortenWalletAddress(wallet.address || '')}</div>
                       </div>
                       <Button variant="outline" size="sm" onClick={disconnect}>
                         Disconnect
@@ -116,7 +116,7 @@ export default function Wallet() {
           <motion.div variants={fadeIn}>
             <Card className="h-full">
               <CardHeader>
-                <CardTitle style={{ color: '#ffffff' }}>Recent Transactions</CardTitle>
+                <CardTitle className="text-gray-900">Recent Transactions</CardTitle>
                 <CardDescription>
                   Your latest wallet activity
                 </CardDescription>

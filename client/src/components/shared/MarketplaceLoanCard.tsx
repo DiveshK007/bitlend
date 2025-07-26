@@ -30,7 +30,7 @@ export function MarketplaceLoanCard({
           <span className={`text-xs py-2 px-3 rounded-full font-medium ${typeClass} glass`}>
             {isRequest ? 'Loan Request' : 'Loan Offer'}
           </span>
-          <h3 className="font-bold mt-3 flex items-center text-xl" style={{ color: '#ffffff' }}>
+          <h3 className="font-bold mt-3 flex items-center text-xl text-gray-900">
             <BitcoinIcon className="mr-2" style={{ color: '#007aff' }} size={20} />
             <span>{formatBTC(loan.amount)}</span>
           </h3>
@@ -41,21 +41,21 @@ export function MarketplaceLoanCard({
         </div>
       </div>
       
-      <div className="grid grid-cols-3 gap-4 text-sm mb-6" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
+      <div className="grid grid-cols-3 gap-4 text-sm mb-6 text-gray-600">
         <div>
           <p className="mb-1">Duration</p>
-          <p className="font-medium" style={{ color: '#ffffff' }}>{loan.durationMonths}mo</p>
+          <p className="font-medium text-gray-900">{loan.durationMonths}mo</p>
         </div>
         <div>
           <p className="mb-1">{isRequest ? 'Borrower' : 'Lender'} Rating</p>
-          <p className="font-medium flex items-center" style={{ color: '#ffffff' }}>
+          <p className="font-medium flex items-center text-gray-900">
             <i className="ri-star-fill mr-1" style={{ color: '#fbbf24' }}></i>
             <span>{rating}</span>
           </p>
         </div>
         <div>
           <p className="mb-1">Collateral</p>
-          <p className="font-medium" style={{ color: '#ffffff' }}>{loan.hasCollateral ? 'Yes' : 'No'}</p>
+          <p className="font-medium text-gray-900">{loan.hasCollateral ? 'Yes' : 'No'}</p>
         </div>
       </div>
       

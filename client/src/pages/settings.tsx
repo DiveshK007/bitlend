@@ -130,7 +130,7 @@ export default function Settings() {
         <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>Settings</h1>
         
         <Tabs defaultValue="profile" className="w-full">
-          <TabsList className="grid grid-cols-3 mb-6">
+          <TabsList className="grid grid-cols-3 mb-6 bg-gray-100">
             <TabsTrigger value="profile">Profile</TabsTrigger>
             <TabsTrigger value="security">Security</TabsTrigger>
             <TabsTrigger value="notifications">Notifications</TabsTrigger>
@@ -139,7 +139,7 @@ export default function Settings() {
           <TabsContent value="profile">
             <Card>
               <CardHeader>
-                <CardTitle style={{ color: '#ffffff' }}>Profile Information</CardTitle>
+                <CardTitle className="text-gray-900">Profile Information</CardTitle>
                 <CardDescription>
                   Update your account profile settings
                 </CardDescription>
@@ -197,7 +197,7 @@ export default function Settings() {
           <TabsContent value="security">
             <Card>
               <CardHeader>
-                <CardTitle style={{ color: '#ffffff' }}>Security Settings</CardTitle>
+                <CardTitle className="text-gray-900">Security Settings</CardTitle>
                 <CardDescription>
                   Manage your account password and security options
                 </CardDescription>
@@ -262,7 +262,7 @@ export default function Settings() {
           <TabsContent value="notifications">
             <Card>
               <CardHeader>
-                <CardTitle style={{ color: '#ffffff' }}>Notification Preferences</CardTitle>
+                <CardTitle className="text-gray-900">Notification Preferences</CardTitle>
                 <CardDescription>
                   Customize how you receive notifications
                 </CardDescription>

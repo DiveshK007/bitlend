@@ -78,7 +78,7 @@ export default function Transactions() {
         <div className="mb-6">
           <Card>
             <CardHeader>
-              <CardTitle style={{ color: '#ffffff' }}>Transaction Overview</CardTitle>
+              <CardTitle className="text-gray-900">Transaction Overview</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="h-[300px]">

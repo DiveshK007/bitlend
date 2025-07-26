@@ -56,7 +56,7 @@ export default function Loans() {
         <Card>
           <Tabs defaultValue="borrowed">
             <CardContent className="pt-6">
-              <TabsList className="grid grid-cols-2 mb-4">
+              <TabsList className="grid grid-cols-2 mb-4 bg-gray-100">
                 <TabsTrigger value="borrowed">Borrowed</TabsTrigger>
                 <TabsTrigger value="lent">Lent</TabsTrigger>
               </TabsList>
