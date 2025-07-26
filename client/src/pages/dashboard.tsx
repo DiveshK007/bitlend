@@ -106,16 +106,6 @@ export default function Dashboard() {
                   </Link>
                 </div>
               </div>
-              <div className="relative">
-                <div className="w-64 h-64 lg:w-80 lg:h-80 relative flex items-center justify-center float-animation">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"></div>
-                  <div className="relative glass-card w-48 h-48 lg:w-60 lg:h-60 rounded-full flex items-center justify-center glow">
-                    <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #007aff 0%, #6c63ff 100%)' }}>
-                      <span className="font-bold text-2xl lg:text-3xl text-white">BT</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </motion.div>
