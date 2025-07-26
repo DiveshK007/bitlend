@@ -93,13 +93,13 @@ export default function Dashboard() {
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link href="/marketplace">
-                    <button className="glass-button text-lg px-8 py-4 min-w-[200px]">
+                    <button className="glass-button text-lg px-8 py-4 w-[220px]">
                       <i className="ri-store-2-line mr-3"></i>
                       Explore Marketplace
                     </button>
                   </Link>
                   <Link href="/wallet">
-                    <button className="btn-secondary text-lg px-8 py-4 min-w-[200px]">
+                    <button className="btn-secondary text-lg px-8 py-4 w-[220px]">
                       <i className="ri-wallet-3-line mr-3"></i>
                       Connect Wallet
                     </button>
