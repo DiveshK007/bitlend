@@ -128,108 +128,108 @@ export default function Dashboard() {
           animate="visible"
         >
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
-            <h2 className="text-3xl font-bold mb-4 lg:mb-0" style={{ color: '#ffffff' }}>Portfolio Overview</h2>
+            <h2 className="text-3xl font-bold mb-4 lg:mb-0 text-white">Portfolio Overview</h2>
             <div className="glass rounded-full px-6 py-3 text-sm">
-              <span className="font-medium flex items-center" style={{ color: '#007aff' }}>
+              <span className="font-medium flex items-center text-blue-400">
                 <i className="ri-time-line mr-2"></i> 
                 Last updated: Just now
               </span>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div variants={fadeIn}>
-              <div className="metric-card">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center">
-                    <div className="glass rounded-2xl p-3 mr-4">
-                      <i className="ri-arrow-down-line text-2xl" style={{ color: '#007aff' }}></i>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Total Borrowed</h3>
-                      <div className="glass rounded-full px-3 py-1 text-xs font-medium mt-2 inline-flex items-center" style={{ color: '#22c55e' }}>
-                        <i className="ri-arrow-up-line mr-1"></i> 12.3%
-                      </div>
+              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
+                    <i className="ri-arrow-down-line text-2xl text-blue-400"></i>
+                  </div>
+                  <div className="text-right">
+                    <div className="glass rounded-full px-3 py-1 text-xs font-medium inline-flex items-center text-green-400">
+                      <i className="ri-arrow-up-line mr-1"></i> 12.3%
                     </div>
                   </div>
                 </div>
-                <div className="flex items-end justify-between">
-                  <span className="text-3xl font-bold" style={{ color: '#ffffff' }}>
+                <div className="mb-2">
+                  <h3 className="font-medium text-sm text-white/60 mb-1">Total Borrowed</h3>
+                  <span className="text-3xl font-bold text-white">
                     {statsLoading ? "..." : formatBTC(stats?.totalBorrowed || 0)}
                   </span>
-                  <p className="text-xs" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>vs last month</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-white/40">vs last month</p>
                 </div>
               </div>
             </motion.div>
             
             <motion.div variants={fadeIn}>
-              <div className="metric-card">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center">
-                    <div className="glass rounded-2xl p-3 mr-4">
-                      <i className="ri-arrow-up-line text-2xl" style={{ color: '#d7aaff' }}></i>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Total Lent</h3>
-                      <div className="glass rounded-full px-3 py-1 text-xs font-medium mt-2 inline-flex items-center" style={{ color: '#22c55e' }}>
-                        <i className="ri-arrow-up-line mr-1"></i> 8.7%
-                      </div>
+              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
+                    <i className="ri-arrow-up-line text-2xl text-purple-400"></i>
+                  </div>
+                  <div className="text-right">
+                    <div className="glass rounded-full px-3 py-1 text-xs font-medium inline-flex items-center text-green-400">
+                      <i className="ri-arrow-up-line mr-1"></i> 8.7%
                     </div>
                   </div>
                 </div>
-                <div className="flex items-end justify-between">
-                  <span className="text-3xl font-bold" style={{ color: '#ffffff' }}>
+                <div className="mb-2">
+                  <h3 className="font-medium text-sm text-white/60 mb-1">Total Lent</h3>
+                  <span className="text-3xl font-bold text-white">
                     {statsLoading ? "..." : formatBTC(stats?.totalLent || 0)}
                   </span>
-                  <p className="text-xs" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>vs last month</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-white/40">vs last month</p>
                 </div>
               </div>
             </motion.div>
             
             <motion.div variants={fadeIn}>
-              <div className="metric-card">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center">
-                    <div className="glass rounded-2xl p-3 mr-4">
-                      <i className="ri-time-line text-2xl" style={{ color: '#22c55e' }}></i>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Active Loans</h3>
-                      <div className="glass rounded-full px-3 py-1 text-xs font-medium mt-2 inline-flex items-center" style={{ color: '#22c55e' }}>
-                        <i className="ri-add-line mr-1"></i> 2
-                      </div>
+              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
+                    <i className="ri-time-line text-2xl text-green-400"></i>
+                  </div>
+                  <div className="text-right">
+                    <div className="glass rounded-full px-3 py-1 text-xs font-medium inline-flex items-center text-green-400">
+                      <i className="ri-add-line mr-1"></i> 2
                     </div>
                   </div>
                 </div>
-                <div className="flex items-end justify-between">
-                  <span className="text-3xl font-bold" style={{ color: '#ffffff' }}>
+                <div className="mb-2">
+                  <h3 className="font-medium text-sm text-white/60 mb-1">Active Loans</h3>
+                  <span className="text-3xl font-bold text-white">
                     {statsLoading ? "..." : stats?.activeLoans || 0}
                   </span>
-                  <p className="text-xs" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>new this week</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-white/40">new this week</p>
                 </div>
               </div>
             </motion.div>
             
             <motion.div variants={fadeIn}>
-              <div className="metric-card">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center">
-                    <div className="glass rounded-2xl p-3 mr-4">
-                      <i className="ri-percent-line text-2xl" style={{ color: '#fbbf24' }}></i>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Interest Earned</h3>
-                      <div className="glass rounded-full px-3 py-1 text-xs font-medium mt-2 inline-flex items-center" style={{ color: '#22c55e' }}>
-                        <i className="ri-arrow-up-line mr-1"></i> 5.2%
-                      </div>
+              <div className="glass-card p-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
+                    <i className="ri-percent-line text-2xl text-yellow-400"></i>
+                  </div>
+                  <div className="text-right">
+                    <div className="glass rounded-full px-3 py-1 text-xs font-medium inline-flex items-center text-green-400">
+                      <i className="ri-arrow-up-line mr-1"></i> 5.2%
                     </div>
                   </div>
                 </div>
-                <div className="flex items-end justify-between">
-                  <span className="text-3xl font-bold" style={{ color: '#ffffff' }}>
+                <div className="mb-2">
+                  <h3 className="font-medium text-sm text-white/60 mb-1">Interest Earned</h3>
+                  <span className="text-3xl font-bold text-white">
                     {statsLoading ? "..." : formatBTC(stats?.interestEarned || 0)}
                   </span>
-                  <p className="text-xs" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>vs last month</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-white/40">vs last month</p>
                 </div>
               </div>
             </motion.div>
