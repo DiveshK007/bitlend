@@ -67,13 +67,14 @@ export default function Dashboard() {
   const highlightedMarketplaceLoans = marketplaceLoans?.slice(0, 4) || [];
   
   return (
-    <div className="min-h-screen relative overflow-hidden w-full max-w-none">
+    <div className="page-container">
+      <div className="content-wrapper">
       {/* Floating background orbs */}
       <div className="floating-orb"></div>
       <div className="floating-orb"></div>
       <div className="floating-orb"></div>
       
-      <div className="relative z-10 p-6 w-full">
+        <div className="relative z-10">
         {/* Hero Welcome Section */}
         <motion.div
           className="mb-12"
@@ -386,6 +387,7 @@ export default function Dashboard() {
             </div>
           </motion.div>
         </motion.div>
+      </div>
       </div>
     </div>
   );

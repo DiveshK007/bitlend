@@ -49,32 +49,32 @@ export function Sidebar() {
     : user?.btcBalance || 0;
 
   return (
-    <aside className="hidden lg:flex lg:flex-col lg:w-80 p-6 h-screen fixed top-0 left-0 custom-scrollbar overflow-y-auto relative z-20 bg-transparent">
-      <div className="glass-card p-6 mb-8">
-        <div className="flex items-center mb-8">
-          <BitcoinIcon className="text-blue-400 text-4xl mr-3" />
-          <span className="font-bold text-3xl gradient-text">BitLend</span>
-        </div>
+    <aside className="hidden lg:flex lg:flex-col lg:w-80 h-screen fixed top-0 left-0 custom-scrollbar overflow-y-auto relative z-20 bg-transparent">
+      <div className="p-6 space-y-6 h-full flex flex-col">
+        <div className="glass-card p-6">
+          <div className="flex items-center mb-6">
+            <BitcoinIcon className="text-blue-400 text-4xl mr-3" />
+            <span className="font-bold text-3xl gradient-text">BitLend</span>
+          </div>
         
-        <div className="mb-6">
           <div className="flex items-center mb-6">
             <div className="glass rounded-2xl h-14 w-14 flex items-center justify-center mr-4 glow">
               <span className="font-bold text-lg text-white">{initials}</span>
             </div>
             <div>
-              <p className="font-semibold text-lg" style={{ color: '#ffffff' }}>{user?.username || "Anonymous"}</p>
+              <p className="font-semibold text-lg text-white">{user?.username || "Anonymous"}</p>
               <p className="text-sm text-white/60 truncate">
                 {shortenWalletAddress(walletAddress || "")}
               </p>
             </div>
           </div>
           
-          <div className="glass p-4 rounded-2xl mb-6 relative overflow-hidden">
+          <div className="glass p-4 rounded-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
             <div className="relative z-10">
               <div className="flex justify-between items-center mb-3">
-                <span className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Portfolio Balance</span>
-                <span className="font-semibold flex items-center" style={{ color: '#007aff' }}>
+                <span className="text-sm text-white/60">Portfolio Balance</span>
+                <span className="font-semibold flex items-center text-primary">
                   <BitcoinIcon className="mr-2" size={18} />
                   <span className="text-lg">{formatBTC(btcBalance)}</span>
                 </span>
@@ -85,37 +85,36 @@ export function Sidebar() {
             </div>
           </div>
         </div>
-      </div>
       
-      <nav className="flex-1 glass-card p-6">
-        <ul>
-          {navItems.map((item) => (
-            <SidebarItem
-              key={item.href}
-              href={item.href}
-              icon={item.icon}
-              label={item.label}
-              isActive={location === item.href}
-            />
-          ))}
-        </ul>
-      </nav>
+        <nav className="flex-1 glass-card p-6">
+          <ul>
+            {navItems.map((item) => (
+              <SidebarItem
+                key={item.href}
+                href={item.href}
+                icon={item.icon}
+                label={item.label}
+                isActive={location === item.href}
+              />
+            ))}
+          </ul>
+        </nav>
       
-      <div className="mt-6 glass-card p-6">
-        <Link href="/help">
-          <div className="sidebar-item mb-3">
-            <i className="ri-question-line mr-4 text-xl"></i>
-            Help & Support
-          </div>
-        </Link>
-        <button 
-          onClick={handleLogout}
-          className="flex items-center p-4 w-full text-left rounded-2xl font-medium transition-all duration-300 glass hover:bg-red-500/10"
-          style={{ color: '#ff453a' }}
-        >
-          <i className="ri-logout-box-line mr-4 text-xl"></i>
-          Log Out
-        </button>
+        <div className="glass-card p-6">
+          <Link href="/help">
+            <div className="sidebar-item mb-3">
+              <i className="ri-question-line mr-4 text-xl"></i>
+              Help & Support
+            </div>
+          </Link>
+          <button 
+            onClick={handleLogout}
+            className="flex items-center p-4 w-full text-left rounded-2xl font-medium transition-all duration-300 glass hover:bg-red-500/10 text-red-400"
+          >
+            <i className="ri-logout-box-line mr-4 text-xl"></i>
+            Log Out
+          </button>
+        </div>
       </div>
     </aside>
   );
