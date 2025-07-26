@@ -112,16 +112,16 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                         />
                         <input
                           type="number"
-                        className="w-full text-center text-xl font-bold p-3 glass-input-dark rounded-md"
+                          className="w-full text-center text-xl font-bold p-3 glass-input-dark rounded-md"
                           step={0.01}
                           min={0.01}
                           max={10}
                           {...field}
                           onChange={(e) => {
-                    <FormItem className="glass-card-subtle rounded-lg p-6 flex flex-row items-center justify-between">
+                            const value = parseFloat(e.target.value);
                             if (!isNaN(value)) {
-                        <FormLabel className="text-white font-medium text-base">Collateral</FormLabel>
-                        <FormDescription className="text-white/70">
+                              field.onChange(value);
+                            }
                           }}
                         />
                       </div>
