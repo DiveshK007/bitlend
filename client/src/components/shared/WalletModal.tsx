@@ -27,7 +27,7 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md glass-white fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
+      <DialogContent className="sm:max-w-md glass-white fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] data-[state=open]:animate-none data-[state=closed]:animate-none">
         <DialogHeader>
           <DialogTitle className="text-gray-900">Connect Your Wallet</DialogTitle>
           <DialogDescription>
