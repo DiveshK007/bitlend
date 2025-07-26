@@ -130,7 +130,7 @@ export default function Wallet() {
                 ) : recentTransactions.length === 0 ? (
                   <div className="py-8 text-center">
                     <p className="mb-4" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>No transaction history yet</p>
-                    <button className="glass-button" onClick={handleDeposit}>Make Your First Deposit</button>
+                    <button className="glass-button px-6 py-3" onClick={handleDeposit}>Get Started - Make Your First Deposit</button>
                   </div>
                 ) : (
                   <div className="space-y-4">
