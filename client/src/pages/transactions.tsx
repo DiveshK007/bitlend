@@ -73,7 +73,6 @@ export default function Transactions() {
         transition={{ duration: 0.5 }}
         className="mb-6"
       >
-        <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>Transaction History</h1>
         <h1 className="text-2xl font-bold mb-6 text-white">Transaction History</h1>
         
         <div className="mb-6">

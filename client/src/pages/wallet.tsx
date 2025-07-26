@@ -52,7 +52,6 @@ export default function Wallet() {
         className="mb-6"
       >
         <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>My Wallet</h1>
-        <h1 className="text-2xl font-bold mb-6 text-white">My Wallet</h1>
         
         <div className="grid gap-6 md:grid-cols-2">
           <motion.div variants={fadeIn}>
