@@ -202,21 +202,6 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
                           }
                         }}
                       />
-                <FormItem className="flex flex-row items-center justify-between p-4 glass-card-subtle rounded-lg">
-                  <div className="space-y-0.5">
-                    <FormLabel className="text-white font-medium">Require Collateral</FormLabel>
-                    <FormDescription className="text-white/70">
-                      Require borrowers to provide collateral?
-                    </FormDescription>
-                  </div>
-                  <FormControl>
-                    <Switch
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
               )}
             />
             
