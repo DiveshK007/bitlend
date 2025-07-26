@@ -30,7 +30,7 @@ export function DesktopHeader() {
   };
 
   return (
-    <header className="hidden lg:block fixed top-6 left-[340px] right-6 z-30">
+    <header className="hidden lg:block fixed top-4 left-[340px] right-6 z-30">
       <div className="glass-card p-6">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold text-white">{getPageTitle()}</h1>
