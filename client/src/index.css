@@ -1097,6 +1097,7 @@ input, textarea {
   min-width: 400px !important;
   min-height: 200px !important;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  margin: 0 !important;
 }
 
 [data-state="open"][role="dialog"] {
