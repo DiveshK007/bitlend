@@ -29,7 +29,7 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Connect Your Wallet</DialogTitle>
+          <DialogTitle className="text-gray-900">Connect Your Wallet</DialogTitle>
           <DialogDescription>
             Connect your Bitcoin wallet to start lending and borrowing on BitLend.
           </DialogDescription>
@@ -38,49 +38,49 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
         <div className="space-y-3 my-6">
           <Button 
             variant="outline" 
-            className="w-full justify-between p-4 text-base font-normal h-auto"
+            className="w-full justify-between p-4 text-base font-normal h-auto text-gray-900"
             onClick={() => handleConnect('MetaMask')}
             disabled={isConnecting}
           >
             <div className="flex items-center">
               <BitcoinIcon className="text-primary text-2xl mr-3" />
-              <span className="font-medium">MetaMask</span>
+              <span className="font-medium text-gray-900">MetaMask</span>
             </div>
             <i className="ri-arrow-right-line"></i>
           </Button>
           
           <Button 
             variant="outline" 
-            className="w-full justify-between p-4 text-base font-normal h-auto"
+            className="w-full justify-between p-4 text-base font-normal h-auto text-gray-900"
             disabled={true}
           >
             <div className="flex items-center">
               <i className="ri-wallet-3-line text-primary text-2xl mr-3"></i>
-              <span className="font-medium">Bitcoin Core</span>
+              <span className="font-medium text-gray-900">Bitcoin Core</span>
             </div>
             <i className="ri-arrow-right-line"></i>
           </Button>
           
           <Button 
             variant="outline" 
-            className="w-full justify-between p-4 text-base font-normal h-auto"
+            className="w-full justify-between p-4 text-base font-normal h-auto text-gray-900"
             disabled={true}
           >
             <div className="flex items-center">
               <i className="ri-safe-2-line text-primary text-2xl mr-3"></i>
-              <span className="font-medium">Hardware Wallet</span>
+              <span className="font-medium text-gray-900">Hardware Wallet</span>
             </div>
             <i className="ri-arrow-right-line"></i>
           </Button>
         </div>
         
         <div className="text-center">
-          <p className="text-sm text-muted-foreground mb-2">Don't have a wallet?</p>
+          <p className="text-sm text-gray-600 mb-2">Don't have a wallet?</p>
           <a 
             href="https://metamask.io/download/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary/80 font-medium transition-colors duration-200"
+            className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
           >
             Learn how to create one
           </a>
