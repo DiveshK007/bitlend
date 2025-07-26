@@ -230,5 +230,6 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               )
               }
     </Dialog>
+  )
   );
 }
