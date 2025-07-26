@@ -11,6 +11,7 @@ import { TransactionItem } from '@/components/shared/TransactionItem';
 import { MarketplaceLoanCard } from '@/components/shared/MarketplaceLoanCard';
 import { useToast } from '@/hooks/use-toast';
 import { Loan } from '@shared/schema';
+import { useUserWallet } from '@/hooks/use-wallet';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -31,6 +32,7 @@ const staggerContainer = {
 export default function Dashboard() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { wallet } = useUserWallet();
   
   // Query user stats
   const { data: stats, isLoading: statsLoading } = useQuery({
@@ -101,7 +103,7 @@ export default function Dashboard() {
                   <Link href="/wallet">
                     <button className="btn-secondary text-lg px-8 py-4 w-[220px] h-[60px] flex items-center justify-center">
                       <i className="ri-wallet-3-line mr-3"></i>
-                      Connect Wallet
+                      {wallet.isConnected ? 'Manage Wallet' : 'Connect Wallet'}
                     </button>
                   </Link>
                 </div>
