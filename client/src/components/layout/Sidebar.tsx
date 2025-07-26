@@ -80,7 +80,6 @@ export function Sidebar() {
                   <span className="text-lg">{formatBTC(btcBalance)}</span>
                 </span>
               </div>
-              <button className="glass-button w-full text-sm py-3">
               <button className="glass-button w-full text-sm py-3 text-white font-semibold">
                 <i className="ri-add-line mr-2"></i> Add Funds
               </button>
@@ -104,7 +103,6 @@ export function Sidebar() {
       
         <div className="glass-card p-6">
           <Link href="/help">
-            <div className="sidebar-item mb-3">
             <div className="sidebar-item mb-3 text-white font-medium">
               <i className="ri-question-line mr-4 text-xl"></i>
               Help & Support
