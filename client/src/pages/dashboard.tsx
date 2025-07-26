@@ -71,6 +71,14 @@ export default function Dashboard() {
   const recentTransactions = transactions?.slice(0, 3) || [];
   const highlightedMarketplaceLoans = marketplaceLoans?.slice(0, 4) || [];
 
+  // First-time user tour - must be before any conditional returns
+  React.useEffect(() => {
+    const hasSeenTour = localStorage.getItem('hasSeenDashboardTour');
+    if (!hasSeenTour) {
+      setTimeout(() => setShowTour(true), 2000);
+    }
+  }, []);
+
   const tourSteps = [
     {
       target: '.portfolio-overview',
@@ -96,14 +104,6 @@ export default function Dashboard() {
   if (statsLoading && loansLoading && transactionsLoading && marketplaceLoading) {
     return <DashboardLoading />;
   }
-
-  // First-time user tour
-  React.useEffect(() => {
-    const hasSeenTour = localStorage.getItem('hasSeenDashboardTour');
-    if (!hasSeenTour) {
-      setTimeout(() => setShowTour(true), 2000);
-    }
-  }, []);
 
   const handleTourClose = () => {
     setShowTour(false);
