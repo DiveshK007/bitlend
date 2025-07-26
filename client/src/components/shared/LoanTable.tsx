@@ -14,8 +14,8 @@ export function LoanTable({ loans, onViewDetails }: LoanTableProps) {
   if (!loans.length) {
     return (
       <div className="empty-state">
-        <h3>No active loans</h3>
-        <p>Your active loans will appear here once you start lending or borrowing.</p>
+        <h3 className="text-gray-900 font-bold text-xl mb-3">No active loans</h3>
+        <p className="text-gray-700 mb-4">Your active loans will appear here once you start lending or borrowing.</p>
       </div>
     );
   }
@@ -39,7 +39,7 @@ export function LoanTable({ loans, onViewDetails }: LoanTableProps) {
               <TableCell className="table-cell">
                 <div className="flex items-center">
                   <span className={`text-xs py-1 px-2 rounded-full font-medium ${getLoanTypeClass(loan.type)}`}>
-                    {loan.type === 'request' ? 'Borrowed' : 'Lent'}
+                    <span className="text-white font-semibold">{loan.type === 'request' ? 'Borrowed' : 'Lent'}</span>
                   </span>
                 </div>
               </TableCell>
@@ -62,8 +62,7 @@ export function LoanTable({ loans, onViewDetails }: LoanTableProps) {
               </TableCell>
               <TableCell className="table-cell">
                 <Button 
-                  className="btn-secondary"
-                  style={{ color: '#007aff' }}
+                  className="btn-secondary text-white font-semibold"
                   onClick={() => onViewDetails(loan)}
                 >
                   Details

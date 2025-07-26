@@ -55,7 +55,7 @@ export function Sidebar() {
         <div className="glass-card p-6">
           <div className="flex items-center mb-6">
             <BitcoinIcon className="text-blue-400 text-4xl mr-3" />
-            <span className="font-bold text-3xl gradient-text">BitLend</span>
+            <span className="font-bold text-3xl text-white">BitLend</span>
           </div>
         
           <div className="flex items-center mb-6">
@@ -81,6 +81,7 @@ export function Sidebar() {
                 </span>
               </div>
               <button className="glass-button w-full text-sm py-3">
+              <button className="glass-button w-full text-sm py-3 text-white font-semibold">
                 <i className="ri-add-line mr-2"></i> Add Funds
               </button>
             </div>
@@ -104,13 +105,14 @@ export function Sidebar() {
         <div className="glass-card p-6">
           <Link href="/help">
             <div className="sidebar-item mb-3">
+            <div className="sidebar-item mb-3 text-white font-medium">
               <i className="ri-question-line mr-4 text-xl"></i>
               Help & Support
             </div>
           </Link>
           <button 
             onClick={handleLogout}
-            className="flex items-center p-4 w-full text-left rounded-2xl font-medium transition-all duration-300 glass hover:bg-red-500/10 text-red-400"
+            className="flex items-center p-4 w-full text-left rounded-2xl font-medium transition-all duration-300 glass hover:bg-red-500/10 text-red-400 font-semibold"
           >
             <i className="ri-logout-box-line mr-4 text-xl"></i>
             Log Out

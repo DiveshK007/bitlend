@@ -40,7 +40,7 @@ export function LoanCard({
       <div className="flex justify-between items-start mb-4">
         <div>
           <span className={`text-xs py-2 px-3 rounded-full font-medium ${typeClass} glass`}>
-            {isBorrowing ? 'Borrowed' : 'Lent'}
+            <span className="text-white font-semibold">{isBorrowing ? 'Borrowed' : 'Lent'}</span>
           </span>
           <h3 className="font-bold mt-3 flex items-center text-xl text-gray-900">
             <BitcoinIcon className="mr-2" style={{ color: '#007aff' }} size={20} />
@@ -79,8 +79,7 @@ export function LoanCard({
       {(showRepayButton && loan.status === 'active' && isBorrowing) && (
         <button 
           onClick={handleRepay} 
-          className="w-full btn-secondary py-3"
-          style={{ color: '#007aff' }}
+          className="w-full btn-secondary py-3 text-white font-semibold"
         >
           Make Repayment
         </button>

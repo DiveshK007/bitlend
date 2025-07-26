@@ -35,8 +35,8 @@ export default function Help() {
     <div className="page-container">
       <div className="content-wrapper max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-2" style={{ color: '#ffffff' }}>Help & Support</h1>
-        <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Find answers to common questions about using BitLend</p>
+        <h1 className="text-2xl font-bold mb-2 text-white">Help & Support</h1>
+        <p className="text-white/80">Find answers to common questions about using BitLend</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">

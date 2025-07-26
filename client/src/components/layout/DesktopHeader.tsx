@@ -39,11 +39,11 @@ export function DesktopHeader() {
               <input
                 type="text"
                 placeholder="Search loans, transactions..."
-                className="glass-input w-96 pl-12 pr-4 py-3 text-white placeholder-white/50"
+                className="glass-input w-96 pl-12 pr-4 py-3 text-white placeholder-white/70 font-medium"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <i className="ri-search-line absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 text-lg"></i>
+              <i className="ri-search-line absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 text-lg"></i>
             </div>
             
             <button className="glass rounded-2xl p-3 relative hover:bg-white/10 transition-all duration-300">

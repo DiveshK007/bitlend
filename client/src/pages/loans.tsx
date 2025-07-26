@@ -50,7 +50,7 @@ export default function Loans() {
         className="mb-6"
       >
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold" style={{ color: '#ffffff' }}>My Loans</h1>
+          <h1 className="text-2xl font-bold text-white">My Loans</h1>
         </div>
 
         <Card className="glass-white">
@@ -65,12 +65,12 @@ export default function Loans() {
                 {isLoading ? (
                   <div className="py-12 text-center">
                     <div className="loading-spinner mx-auto mb-4"></div>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading your borrowed loans...</p>
+                    <p className="text-white/70">Loading your borrowed loans...</p>
                   </div>
                 ) : borrowedLoans.length === 0 ? (
                   <div className="empty-state">
-                    <h3>No borrowed loans</h3>
-                    <p>Start your lending journey by requesting a loan from our marketplace.</p>
+                    <h3 className="text-gray-900 font-bold text-xl mb-3">No borrowed loans</h3>
+                    <p className="text-gray-700 mb-4">Start your lending journey by requesting a loan from our marketplace.</p>
                   </div>
                 ) : (
                   <motion.div 
@@ -103,12 +103,12 @@ export default function Loans() {
                 {isLoading ? (
                   <div className="py-12 text-center">
                     <div className="loading-spinner mx-auto mb-4"></div>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading your lent loans...</p>
+                    <p className="text-white/70">Loading your lent loans...</p>
                   </div>
                 ) : lentLoans.length === 0 ? (
                   <div className="empty-state">
-                    <h3>No lent loans</h3>
-                    <p>Start earning interest by offering loans to borrowers in our marketplace.</p>
+                    <h3 className="text-gray-900 font-bold text-xl mb-3">No lent loans</h3>
+                    <p className="text-gray-700 mb-4">Start earning interest by offering loans to borrowers in our marketplace.</p>
                   </div>
                 ) : (
                   <motion.div 

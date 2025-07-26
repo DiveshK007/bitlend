@@ -128,6 +128,7 @@ export default function Settings() {
         className="mb-6"
       >
         <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>Settings</h1>
+        <h1 className="text-2xl font-bold mb-6 text-white">Settings</h1>
         
         <Tabs defaultValue="profile" className="w-full">
           <TabsList className="grid grid-cols-3 mb-6 bg-gray-100">
@@ -178,7 +179,7 @@ export default function Settings() {
                     <div>
                       <FormLabel className="text-gray-900 font-medium">Wallet Address</FormLabel>
                       <div className="flex items-center p-3 glass-card-subtle rounded-md">
-                        <span className="text-sm text-white/70">{shortenWalletAddress(user?.walletAddress || "")}</span>
+                        <span className="text-sm text-white">{shortenWalletAddress(user?.walletAddress || "")}</span>
                       </div>
                       <FormDescription className="text-gray-600">
                         Your connected wallet address
@@ -186,7 +187,7 @@ export default function Settings() {
                     </div>
                     
                     <Button type="submit" className="glass-button-primary" disabled={isSubmitting}>
-                      {isSubmitting ? "Saving..." : "Save Changes"}
+                      <span className="text-white font-semibold">{isSubmitting ? "Saving..." : "Save Changes"}</span>
                     </Button>
                   </form>
                 </Form>

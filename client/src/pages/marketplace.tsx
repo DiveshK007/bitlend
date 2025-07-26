@@ -79,15 +79,15 @@ export default function Marketplace() {
         className="mb-6"
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
-          <h1 className="text-2xl font-bold mb-2 sm:mb-0" style={{ color: '#ffffff' }}>Loan Marketplace</h1>
+          <h1 className="text-2xl font-bold mb-2 sm:mb-0 text-white">Loan Marketplace</h1>
           <div className="flex space-x-3">
-            <Button onClick={() => setShowRequestForm(true)}>
+            <Button onClick={() => setShowRequestForm(true)} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold">
               <i className="ri-add-line mr-2"></i> Request Loan
             </Button>
             <Button 
               variant="outline" 
               onClick={() => setShowOfferForm(true)}
-              className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+              className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white font-semibold"
             >
               <i className="ri-coin-line mr-2"></i> Offer Loan
             </Button>
@@ -116,7 +116,7 @@ export default function Marketplace() {
                   <div className="empty-state">
                     <h3 className="text-gray-900 font-bold text-xl mb-3">No loan requests available</h3>
                     <p className="text-gray-700 mb-4">Be the first to create a loan offer and start earning interest on your Bitcoin.</p>
-                    <Button onClick={() => setShowOfferForm(true)}>Create a Loan Offer</Button>
+                    <Button onClick={() => setShowOfferForm(true)} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold">Create a Loan Offer</Button>
                   </div>
                 ) : (
                   <motion.div 
@@ -154,7 +154,7 @@ export default function Marketplace() {
                   <div className="empty-state">
                     <h3 className="text-gray-900 font-bold text-xl mb-3">No loan offers available</h3>
                     <p className="text-gray-700 mb-4">Create a loan request to attract lenders and get the funding you need.</p>
-                    <Button onClick={() => setShowRequestForm(true)}>Create a Loan Request</Button>
+                    <Button onClick={() => setShowRequestForm(true)} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold">Create a Loan Request</Button>
                   </div>
                 ) : (
                   <motion.div 

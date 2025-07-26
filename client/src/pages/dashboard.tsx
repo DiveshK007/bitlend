@@ -125,20 +125,20 @@ export default function Dashboard() {
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between">
               <div className="text-center lg:text-left mb-6 lg:mb-0">
                 <h1 className="text-5xl lg:text-6xl font-bold mb-4">
-                  <span className="gradient-text">Welcome to BitLend</span>
+                  <span className="text-white">Welcome to BitLend</span>
                 </h1>
-                <p className="text-xl max-w-2xl leading-relaxed" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                <p className="text-xl max-w-2xl leading-relaxed text-white/90">
                   The future of decentralized Bitcoin lending. Secure, transparent, and powered by blockchain technology.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link href="/marketplace">
-                    <button className="glass-button text-lg px-8 py-4 w-[220px] h-[60px] flex items-center justify-center micro-bounce">
+                    <button className="glass-button text-lg px-8 py-4 w-[220px] h-[60px] flex items-center justify-center micro-bounce text-white font-semibold">
                       <i className="ri-store-2-line mr-3"></i>
                       Explore Marketplace
                     </button>
                   </Link>
                   <Link href="/wallet">
-                    <button className="btn-secondary text-lg px-8 py-4 w-[220px] h-[60px] flex items-center justify-center">
+                    <button className="btn-secondary text-lg px-8 py-4 w-[220px] h-[60px] flex items-center justify-center text-white font-semibold">
                       <i className="ri-wallet-3-line mr-3"></i>
                       {wallet.isConnected ? 'Manage Wallet' : 'Connect Wallet'}
                     </button>
@@ -159,7 +159,7 @@ export default function Dashboard() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
             <h2 className="text-3xl font-bold mb-4 lg:mb-0 text-white">Portfolio Overview</h2>
             <div className="glass rounded-full px-6 py-3 text-sm portfolio-overview">
-              <span className="font-medium flex items-center text-blue-400">
+              <span className="font-medium flex items-center text-white">
                 <i className="ri-time-line mr-2"></i> 
                 Last updated: Just now
               </span>
@@ -273,10 +273,10 @@ export default function Dashboard() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-            <h2 className="text-3xl font-bold mb-4 lg:mb-0" style={{ color: '#ffffff' }}>Active Loans</h2>
+            <h2 className="text-3xl font-bold mb-4 lg:mb-0 text-white">Active Loans</h2>
             <Link href="/loans">
-              <button className="btn-secondary px-6 py-3 flex items-center">
-                <span style={{ color: '#007aff' }}>View All Loans</span> <i className="ri-arrow-right-line ml-2"></i>
+              <button className="btn-secondary px-6 py-3 flex items-center text-white font-semibold">
+                View All Loans <i className="ri-arrow-right-line ml-2"></i>
               </button>
             </Link>
           </div>
@@ -289,13 +289,13 @@ export default function Dashboard() {
               </div>
             ) : activeLoans && activeLoans.length === 0 ? (
               <div className="empty-state">
-                <div className="glass rounded-3xl w-24 h-24 flex items-center justify-center mx-auto mb-6 micro-bounce">
-                  <i className="ri-inbox-line text-4xl" style={{ color: 'rgba(255, 255, 255, 0.5)' }}></i>
+                <div className="glass rounded-3xl w-24 h-24 flex items-center justify-center mx-auto mb-6 micro-bounce text-white/70">
+                  <i className="ri-inbox-line text-4xl"></i>
                 </div>
-                <h3>No active loans</h3>
-                <p>Your journey starts here — explore the marketplace to find lending opportunities and start building your portfolio.</p>
+                <h3 className="text-white text-xl font-bold mb-3">No active loans</h3>
+                <p className="text-white/80 mb-6">Your journey starts here — explore the marketplace to find lending opportunities and start building your portfolio.</p>
                 <Link href="/marketplace">
-                  <button className="glass-button text-lg px-8 py-4">
+                  <button className="glass-button text-lg px-8 py-4 text-white font-semibold">
                     Browse Marketplace
                   </button>
                 </Link>
@@ -329,13 +329,13 @@ export default function Dashboard() {
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center">
                   <div className="glass rounded-xl p-2 mr-3">
-                    <i className="ri-exchange-funds-line text-xl" style={{ color: '#007aff' }}></i>
+                    <i className="ri-exchange-funds-line text-xl text-blue-400"></i>
                   </div>
-                  <h2 className="text-xl font-bold" style={{ color: '#ffffff' }}>Recent Transactions</h2>
+                  <h2 className="text-xl font-bold text-white">Recent Transactions</h2>
                 </div>
                 <Link href="/transactions">
-                  <button className="btn-secondary px-4 py-2 text-sm flex items-center">
-                    <span style={{ color: '#007aff' }}>View All</span> <i className="ri-arrow-right-line ml-1"></i>
+                  <button className="btn-secondary px-4 py-2 text-sm flex items-center text-white font-semibold">
+                    View All <i className="ri-arrow-right-line ml-1"></i>
                   </button>
                 </Link>
               </div>
@@ -349,10 +349,10 @@ export default function Dashboard() {
                 ) : recentTransactions.length === 0 ? (
                   <div className="text-center py-12">
                     <div className="glass rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                      <i className="ri-file-list-line text-2xl" style={{ color: 'rgba(255, 255, 255, 0.5)' }}></i>
+                      <i className="ri-file-list-line text-2xl text-white/70"></i>
                     </div>
-                    <h3 className="text-lg font-medium mb-2" style={{ color: '#ffffff' }}>No transactions yet</h3>
-                    <p className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Your transaction history will appear here</p>
+                    <h3 className="text-lg font-medium mb-2 text-white">No transactions yet</h3>
+                    <p className="text-sm text-white/70">Your transaction history will appear here</p>
                   </div>
                 ) : (
                   recentTransactions.map(transaction => (
@@ -371,13 +371,13 @@ export default function Dashboard() {
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center">
                   <div className="glass rounded-xl p-2 mr-3">
-                    <i className="ri-store-2-line text-xl" style={{ color: '#d7aaff' }}></i>
+                    <i className="ri-store-2-line text-xl text-purple-400"></i>
                   </div>
-                  <h2 className="text-xl font-bold" style={{ color: '#ffffff' }}>Marketplace Opportunities</h2>
+                  <h2 className="text-xl font-bold text-white">Marketplace Opportunities</h2>
                 </div>
                 <Link href="/marketplace">
-                  <button className="btn-secondary px-4 py-2 text-sm flex items-center">
-                    <span style={{ color: '#d7aaff' }}>Browse All</span> <i className="ri-arrow-right-line ml-1"></i>
+                  <button className="btn-secondary px-4 py-2 text-sm flex items-center text-white font-semibold">
+                    Browse All <i className="ri-arrow-right-line ml-1"></i>
                   </button>
                 </Link>
               </div>
@@ -390,12 +390,12 @@ export default function Dashboard() {
               ) : highlightedMarketplaceLoans.length === 0 ? (
                 <div className="empty-state">
                   <div className="glass rounded-3xl w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                    <i className="ri-store-2-line text-4xl" style={{ color: 'rgba(255, 255, 255, 0.5)' }}></i>
+                    <i className="ri-store-2-line text-4xl text-white/70"></i>
                   </div>
-                  <h3>No loans available</h3>
-                  <p>New opportunities are added daily — check back soon or create your own loan request to get started.</p>
+                  <h3 className="text-white text-xl font-bold mb-3">No loans available</h3>
+                  <p className="text-white/80 mb-6">New opportunities are added daily — check back soon or create your own loan request to get started.</p>
                   <Link href="/marketplace">
-                    <button className="glass-button text-lg px-8 py-4">
+                    <button className="glass-button text-lg px-8 py-4 text-white font-semibold">
                       Visit Marketplace
                     </button>
                   </Link>

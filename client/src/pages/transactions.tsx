@@ -74,6 +74,7 @@ export default function Transactions() {
         className="mb-6"
       >
         <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>Transaction History</h1>
+        <h1 className="text-2xl font-bold mb-6 text-white">Transaction History</h1>
         
         <div className="mb-6">
           <Card className="glass-white">
@@ -90,7 +91,7 @@ export default function Transactions() {
                   <StatisticsChart data={chartDataArray} />
                 ) : (
                   <div className="h-full flex items-center justify-center">
-                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>No transaction data available</p>
+                    <p className="text-gray-600">No transaction data available</p>
                   </div>
                 )}
               </div>
@@ -112,17 +113,17 @@ export default function Transactions() {
           {isLoading ? (
             <div className="py-12 text-center">
               <div className="loading-spinner mx-auto mb-4"></div>
-              <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading transaction history...</p>
+              <p className="text-white/70">Loading transaction history...</p>
             </div>
           ) : transactions?.length === 0 ? (
             <div className="empty-state">
-              <h3>No transactions yet</h3>
-              <p>Your transaction history will appear here once you start lending, borrowing, or making deposits.</p>
+              <h3 className="text-gray-900 font-bold text-xl mb-3">No transactions yet</h3>
+              <p className="text-gray-700 mb-4">Your transaction history will appear here once you start lending, borrowing, or making deposits.</p>
             </div>
           ) : (
             Object.entries(transactionsByDate).map(([date, dayTransactions]: [string, any]) => (
               <motion.div key={date} variants={fadeIn} className="mb-6">
-                <h2 className="text-lg font-medium mb-3" style={{ color: '#ffffff' }}>{date}</h2>
+                <h2 className="text-lg font-medium mb-3 text-white">{date}</h2>
                 <Card className="glass-white">
                   <CardContent className="p-6">
                     <div className="space-y-4">

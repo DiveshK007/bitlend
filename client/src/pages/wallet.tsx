@@ -52,6 +52,7 @@ export default function Wallet() {
         className="mb-6"
       >
         <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>My Wallet</h1>
+        <h1 className="text-2xl font-bold mb-6 text-white">My Wallet</h1>
         
         <div className="grid gap-6 md:grid-cols-2">
           <motion.div variants={fadeIn}>
@@ -123,12 +124,12 @@ export default function Wallet() {
                 {transactionsLoading ? (
                   <div className="py-8 text-center">
                     <div className="loading-spinner mx-auto mb-4"></div>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading transactions...</p>
+                    <p className="text-white/70">Loading transactions...</p>
                   </div>
                 ) : recentTransactions.length === 0 ? (
                   <div className="py-8 text-center">
                     <p className="mb-4 text-gray-600">No transaction history yet</p>
-                    <Button className="px-4 py-2 glass-button-primary" onClick={handleDeposit}>Make First Deposit</Button>
+                    <Button className="px-4 py-2 glass-button-primary text-white font-semibold" onClick={handleDeposit}>Make First Deposit</Button>
                   </div>
                 ) : (
                   <div className="space-y-4">

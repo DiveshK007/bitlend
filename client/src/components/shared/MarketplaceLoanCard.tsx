@@ -28,7 +28,7 @@ export function MarketplaceLoanCard({
       <div className="flex justify-between items-start mb-4">
         <div>
           <span className={`text-xs py-2 px-3 rounded-full font-medium ${typeClass} glass`}>
-            {isRequest ? 'Loan Request' : 'Loan Offer'}
+            <span className="text-white font-semibold">{isRequest ? 'Loan Request' : 'Loan Offer'}</span>
           </span>
           <h3 className="font-bold mt-3 flex items-center text-xl text-gray-900">
             <BitcoinIcon className="mr-2" style={{ color: '#007aff' }} size={20} />
@@ -62,10 +62,9 @@ export function MarketplaceLoanCard({
       <button 
         className={`w-full py-3 font-medium transition-all duration-300 ${
           isRequest 
-            ? 'glass-button' 
-            : 'btn-secondary'
+            ? 'glass-button text-white font-semibold' 
+            : 'btn-secondary text-white font-semibold'
         }`}
-        style={!isRequest ? { color: '#d7aaff' } : {}}
         onClick={handleAccept}
       >
         {isRequest ? 'Fund This Loan' : 'Accept Offer'}
