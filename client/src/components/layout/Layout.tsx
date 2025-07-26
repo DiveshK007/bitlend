@@ -41,7 +41,7 @@ export default function Layout({ children }: LayoutProps) {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen relative overflow-hidden">
+    <div className="flex flex-col lg:flex-row min-h-screen relative overflow-hidden" style={{ paddingLeft: '320px' }}>
       {/* Background orbs */}
       <div className="floating-orb"></div>
       <div className="floating-orb"></div>
@@ -50,7 +50,7 @@ export default function Layout({ children }: LayoutProps) {
       <MobileHeader />
       <Sidebar />
       
-      <main className="flex-1 pb-20 lg:pb-0 relative z-10">
+      <main className="flex-1 pb-20 lg:pb-0 relative z-10 w-full">
         <DesktopHeader />
         {children}
       </main>

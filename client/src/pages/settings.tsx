@@ -126,7 +126,7 @@ export default function Settings() {
         transition={{ duration: 0.5 }}
         className="mb-6"
       >
-        <h1 className="text-2xl font-bold mb-6">Settings</h1>
+        <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>Settings</h1>
         
         <Tabs defaultValue="profile" className="w-full">
           <TabsList className="grid grid-cols-3 mb-6">
@@ -138,7 +138,7 @@ export default function Settings() {
           <TabsContent value="profile">
             <Card>
               <CardHeader>
-                <CardTitle>Profile Information</CardTitle>
+                <CardTitle style={{ color: '#ffffff' }}>Profile Information</CardTitle>
                 <CardDescription>
                   Update your account profile settings
                 </CardDescription>
@@ -151,9 +151,9 @@ export default function Settings() {
                       name="username"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Username</FormLabel>
+                          <FormLabel className="form-label">Username</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your username" {...field} />
+                            <input className="glass-input w-full" placeholder="Your username" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -165,9 +165,9 @@ export default function Settings() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="form-label">Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your email address" {...field} />
+                            <input className="glass-input w-full" placeholder="Your email address" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -175,18 +175,18 @@ export default function Settings() {
                     />
                     
                     <div>
-                      <FormLabel>Wallet Address</FormLabel>
-                      <div className="flex items-center p-2 border rounded-md bg-muted">
-                        <span className="text-sm text-muted-foreground">{shortenWalletAddress(user?.walletAddress || "")}</span>
+                      <FormLabel className="form-label">Wallet Address</FormLabel>
+                      <div className="flex items-center p-2 glass rounded-md">
+                        <span className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{shortenWalletAddress(user?.walletAddress || "")}</span>
                       </div>
-                      <FormDescription>
+                      <FormDescription className="form-description">
                         Your connected wallet address
                       </FormDescription>
                     </div>
                     
-                    <Button type="submit" disabled={isSubmitting}>
+                    <button type="submit" className="glass-button" disabled={isSubmitting}>
                       {isSubmitting ? "Saving..." : "Save Changes"}
-                    </Button>
+                    </button>
                   </form>
                 </Form>
               </CardContent>
@@ -196,7 +196,7 @@ export default function Settings() {
           <TabsContent value="security">
             <Card>
               <CardHeader>
-                <CardTitle>Security Settings</CardTitle>
+                <CardTitle style={{ color: '#ffffff' }}>Security Settings</CardTitle>
                 <CardDescription>
                   Manage your account password and security options
                 </CardDescription>
@@ -209,9 +209,9 @@ export default function Settings() {
                       name="currentPassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Current Password</FormLabel>
+                          <FormLabel className="form-label">Current Password</FormLabel>
                           <FormControl>
-                            <Input type="password" placeholder="••••••••" {...field} />
+                            <input type="password" className="glass-input w-full" placeholder="••••••••" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -223,11 +223,11 @@ export default function Settings() {
                       name="newPassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>New Password</FormLabel>
+                          <FormLabel className="form-label">New Password</FormLabel>
                           <FormControl>
-                            <Input type="password" placeholder="••••••••" {...field} />
+                            <input type="password" className="glass-input w-full" placeholder="••••••••" {...field} />
                           </FormControl>
-                          <FormDescription>
+                          <FormDescription className="form-description">
                             Password must be at least 6 characters
                           </FormDescription>
                           <FormMessage />
@@ -240,18 +240,18 @@ export default function Settings() {
                       name="confirmPassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Confirm New Password</FormLabel>
+                          <FormLabel className="form-label">Confirm New Password</FormLabel>
                           <FormControl>
-                            <Input type="password" placeholder="••••••••" {...field} />
+                            <input type="password" className="glass-input w-full" placeholder="••••••••" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
                     
-                    <Button type="submit" disabled={isSubmitting}>
+                    <button type="submit" className="glass-button" disabled={isSubmitting}>
                       {isSubmitting ? "Updating..." : "Update Password"}
-                    </Button>
+                    </button>
                   </form>
                 </Form>
               </CardContent>
@@ -261,7 +261,7 @@ export default function Settings() {
           <TabsContent value="notifications">
             <Card>
               <CardHeader>
-                <CardTitle>Notification Preferences</CardTitle>
+                <CardTitle style={{ color: '#ffffff' }}>Notification Preferences</CardTitle>
                 <CardDescription>
                   Customize how you receive notifications
                 </CardDescription>
@@ -273,10 +273,10 @@ export default function Settings() {
                       control={notificationForm.control}
                       name="loanUpdates"
                       render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                        <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="text-base">Loan Updates</FormLabel>
-                            <FormDescription>
+                            <FormLabel className="form-label text-base">Loan Updates</FormLabel>
+                            <FormDescription className="form-description">
                               Receive notifications about your active loans
                             </FormDescription>
                           </div>
@@ -294,10 +294,10 @@ export default function Settings() {
                       control={notificationForm.control}
                       name="marketplaceAlerts"
                       render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                        <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="text-base">Marketplace Alerts</FormLabel>
-                            <FormDescription>
+                            <FormLabel className="form-label text-base">Marketplace Alerts</FormLabel>
+                            <FormDescription className="form-description">
                               Get notified about new matching loan opportunities
                             </FormDescription>
                           </div>
@@ -315,10 +315,10 @@ export default function Settings() {
                       control={notificationForm.control}
                       name="securityAlerts"
                       render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                        <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="text-base">Security Alerts</FormLabel>
-                            <FormDescription>
+                            <FormLabel className="form-label text-base">Security Alerts</FormLabel>
+                            <FormDescription className="form-description">
                               Critical security notifications about your account
                             </FormDescription>
                           </div>
@@ -336,10 +336,10 @@ export default function Settings() {
                       control={notificationForm.control}
                       name="marketingEmails"
                       render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                        <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="text-base">Marketing Emails</FormLabel>
-                            <FormDescription>
+                            <FormLabel className="form-label text-base">Marketing Emails</FormLabel>
+                            <FormDescription className="form-description">
                               Receive news, updates and offers about BitLend
                             </FormDescription>
                           </div>
@@ -353,9 +353,9 @@ export default function Settings() {
                       )}
                     />
                     
-                    <Button type="submit" disabled={isSubmitting}>
+                    <button type="submit" className="glass-button" disabled={isSubmitting}>
                       {isSubmitting ? "Saving..." : "Save Preferences"}
-                    </Button>
+                    </button>
                   </form>
                 </Form>
               </CardContent>

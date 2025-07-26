@@ -34,15 +34,15 @@ export default function Help() {
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-2">Help & Support</h1>
-        <p className="text-muted-foreground">Find answers to common questions about using BitLend</p>
+        <h1 className="text-2xl font-bold mb-2" style={{ color: '#ffffff' }}>Help & Support</h1>
+        <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Find answers to common questions about using BitLend</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <Card className="col-span-2">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <BitcoinIcon className="text-primary mr-2" />
+            <CardTitle className="flex items-center" style={{ color: '#ffffff' }}>
+              <BitcoinIcon className="mr-2" style={{ color: '#007aff' }} />
               Frequently Asked Questions
             </CardTitle>
             <CardDescription>
@@ -53,9 +53,9 @@ export default function Help() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionTrigger style={{ color: '#ffffff' }}>{faq.question}</AccordionTrigger>
                   <AccordionContent>
-                    <p>{faq.answer}</p>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{faq.answer}</p>
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -65,7 +65,7 @@ export default function Help() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Contact Support</CardTitle>
+            <CardTitle style={{ color: '#ffffff' }}>Contact Support</CardTitle>
             <CardDescription>
               Need help with something specific? Get in touch with our support team.
             </CardDescription>
@@ -73,16 +73,16 @@ export default function Help() {
           <CardContent>
             <div className="space-y-2">
               <div className="flex items-center">
-                <i className="ri-mail-line text-lg mr-3 text-primary"></i>
-                <span>support@bitlend.io</span>
+                <i className="ri-mail-line text-lg mr-3" style={{ color: '#007aff' }}></i>
+                <span style={{ color: '#ffffff' }}>support@bitlend.io</span>
               </div>
               <div className="flex items-center">
-                <i className="ri-customer-service-line text-lg mr-3 text-primary"></i>
-                <span>+1 (800) BIT-LEND</span>
+                <i className="ri-customer-service-line text-lg mr-3" style={{ color: '#007aff' }}></i>
+                <span style={{ color: '#ffffff' }}>+1 (800) BIT-LEND</span>
               </div>
               <div className="flex items-center">
-                <i className="ri-global-line text-lg mr-3 text-primary"></i>
-                <span>www.bitlend.io</span>
+                <i className="ri-global-line text-lg mr-3" style={{ color: '#007aff' }}></i>
+                <span style={{ color: '#ffffff' }}>www.bitlend.io</span>
               </div>
             </div>
           </CardContent>
@@ -90,7 +90,7 @@ export default function Help() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Resources</CardTitle>
+            <CardTitle style={{ color: '#ffffff' }}>Resources</CardTitle>
             <CardDescription>
               Additional resources to help you get the most out of BitLend
             </CardDescription>
@@ -98,20 +98,20 @@ export default function Help() {
           <CardContent>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <i className="ri-book-open-line text-lg mr-3 text-primary"></i>
-                <span>User Guide</span>
+                <i className="ri-book-open-line text-lg mr-3" style={{ color: '#007aff' }}></i>
+                <span style={{ color: '#ffffff' }}>User Guide</span>
               </li>
               <li className="flex items-center">
-                <i className="ri-video-line text-lg mr-3 text-primary"></i>
-                <span>Tutorial Videos</span>
+                <i className="ri-video-line text-lg mr-3" style={{ color: '#007aff' }}></i>
+                <span style={{ color: '#ffffff' }}>Tutorial Videos</span>
               </li>
               <li className="flex items-center">
-                <i className="ri-file-list-line text-lg mr-3 text-primary"></i>
-                <span>Terms of Service</span>
+                <i className="ri-file-list-line text-lg mr-3" style={{ color: '#007aff' }}></i>
+                <span style={{ color: '#ffffff' }}>Terms of Service</span>
               </li>
               <li className="flex items-center">
-                <i className="ri-shield-line text-lg mr-3 text-primary"></i>
-                <span>Privacy Policy</span>
+                <i className="ri-shield-line text-lg mr-3" style={{ color: '#007aff' }}></i>
+                <span style={{ color: '#ffffff' }}>Privacy Policy</span>
               </li>
             </ul>
           </CardContent>

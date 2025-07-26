@@ -24,47 +24,48 @@ export function MarketplaceLoanCard({
   };
 
   return (
-    <div className="glass-card p-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 marketplace-card-hover">
+    <div className="loan-card marketplace-card-hover">
       <div className="flex justify-between items-start mb-4">
         <div>
           <span className={`text-xs py-2 px-3 rounded-full font-medium ${typeClass} glass`}>
             {isRequest ? 'Loan Request' : 'Loan Offer'}
           </span>
-          <h3 className="font-bold mt-3 flex items-center text-white text-xl">
-            <BitcoinIcon className="text-blue-400 mr-2" size={20} />
+          <h3 className="font-bold mt-3 flex items-center text-xl" style={{ color: '#ffffff' }}>
+            <BitcoinIcon className="mr-2" style={{ color: '#007aff' }} size={20} />
             <span>{formatBTC(loan.amount)}</span>
           </h3>
         </div>
         <div className="text-right">
-          <p className="text-white/60 text-sm">Interest Rate</p>
-          <p className={`font-bold text-lg ${isRequest ? 'text-blue-400' : 'text-purple-400'}`}>{loan.interest}%</p>
+          <p className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Interest Rate</p>
+          <p className={`font-bold text-lg`} style={{ color: isRequest ? '#007aff' : '#d7aaff' }}>{loan.interest}%</p>
         </div>
       </div>
       
-      <div className="grid grid-cols-3 gap-4 text-sm text-white/70 mb-6">
+      <div className="grid grid-cols-3 gap-4 text-sm mb-6" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
         <div>
           <p className="mb-1">Duration</p>
-          <p className="font-medium text-white">{loan.durationMonths}mo</p>
+          <p className="font-medium" style={{ color: '#ffffff' }}>{loan.durationMonths}mo</p>
         </div>
         <div>
           <p className="mb-1">{isRequest ? 'Borrower' : 'Lender'} Rating</p>
-          <p className="font-medium text-white flex items-center">
-            <i className="ri-star-fill text-yellow-400 mr-1"></i>
+          <p className="font-medium flex items-center" style={{ color: '#ffffff' }}>
+            <i className="ri-star-fill mr-1" style={{ color: '#fbbf24' }}></i>
             <span>{rating}</span>
           </p>
         </div>
         <div>
           <p className="mb-1">Collateral</p>
-          <p className="font-medium text-white">{loan.hasCollateral ? 'Yes' : 'No'}</p>
+          <p className="font-medium" style={{ color: '#ffffff' }}>{loan.hasCollateral ? 'Yes' : 'No'}</p>
         </div>
       </div>
       
       <button 
-        className={`w-full py-3 rounded-2xl font-medium transition-all duration-300 ${
+        className={`w-full py-3 font-medium transition-all duration-300 ${
           isRequest 
             ? 'glass-button' 
-            : 'glass text-purple-400 hover:text-white hover:bg-purple-500/20'
+            : 'btn-secondary'
         }`}
+        style={!isRequest ? { color: '#d7aaff' } : {}}
         onClick={handleAccept}
       >
         {isRequest ? 'Fund This Loan' : 'Accept Offer'}

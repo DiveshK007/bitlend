@@ -78,7 +78,7 @@ export default function Marketplace() {
         className="mb-6"
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
-          <h1 className="text-2xl font-bold mb-2 sm:mb-0">Loan Marketplace</h1>
+          <h1 className="text-2xl font-bold mb-2 sm:mb-0" style={{ color: '#ffffff' }}>Loan Marketplace</h1>
           <div className="flex space-x-3">
             <Button onClick={() => setShowRequestForm(true)}>
               <i className="ri-add-line mr-2"></i> Request Loan
@@ -100,12 +100,13 @@ export default function Marketplace() {
               <TabsContent value="requests">
                 {isLoading ? (
                   <div className="py-12 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                    <p className="text-muted-foreground">Loading loan requests...</p>
+                    <div className="loading-spinner mx-auto mb-4"></div>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading loan requests...</p>
                   </div>
                 ) : requestLoans.length === 0 ? (
-                  <div className="py-12 text-center">
-                    <p className="text-muted-foreground mb-4">No loan requests available</p>
+                  <div className="empty-state">
+                    <h3>No loan requests available</h3>
+                    <p>Be the first to create a loan offer and start earning interest on your Bitcoin.</p>
                     <Button onClick={() => setShowOfferForm(true)}>Create a Loan Offer</Button>
                   </div>
                 ) : (
@@ -137,12 +138,13 @@ export default function Marketplace() {
               <TabsContent value="offers">
                 {isLoading ? (
                   <div className="py-12 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                    <p className="text-muted-foreground">Loading loan offers...</p>
+                    <div className="loading-spinner mx-auto mb-4"></div>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading loan offers...</p>
                   </div>
                 ) : offerLoans.length === 0 ? (
-                  <div className="py-12 text-center">
-                    <p className="text-muted-foreground mb-4">No loan offers available</p>
+                  <div className="empty-state">
+                    <h3>No loan offers available</h3>
+                    <p>Create a loan request to attract lenders and get the funding you need.</p>
                     <Button onClick={() => setShowRequestForm(true)}>Create a Loan Request</Button>
                   </div>
                 ) : (

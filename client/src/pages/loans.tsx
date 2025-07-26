@@ -49,7 +49,7 @@ export default function Loans() {
         className="mb-6"
       >
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold">My Loans</h1>
+          <h1 className="text-2xl font-bold" style={{ color: '#ffffff' }}>My Loans</h1>
         </div>
 
         <Card>
@@ -63,12 +63,13 @@ export default function Loans() {
               <TabsContent value="borrowed">
                 {isLoading ? (
                   <div className="py-12 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                    <p className="text-muted-foreground">Loading your borrowed loans...</p>
+                    <div className="loading-spinner mx-auto mb-4"></div>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading your borrowed loans...</p>
                   </div>
                 ) : borrowedLoans.length === 0 ? (
-                  <div className="py-12 text-center">
-                    <p className="text-muted-foreground">You don't have any borrowed loans.</p>
+                  <div className="empty-state">
+                    <h3>No borrowed loans</h3>
+                    <p>Start your lending journey by requesting a loan from our marketplace.</p>
                   </div>
                 ) : (
                   <motion.div 
@@ -100,12 +101,13 @@ export default function Loans() {
               <TabsContent value="lent">
                 {isLoading ? (
                   <div className="py-12 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                    <p className="text-muted-foreground">Loading your lent loans...</p>
+                    <div className="loading-spinner mx-auto mb-4"></div>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading your lent loans...</p>
                   </div>
                 ) : lentLoans.length === 0 ? (
-                  <div className="py-12 text-center">
-                    <p className="text-muted-foreground">You don't have any lent loans.</p>
+                  <div className="empty-state">
+                    <h3>No lent loans</h3>
+                    <p>Start earning interest by offering loans to borrowers in our marketplace.</p>
                   </div>
                 ) : (
                   <motion.div 

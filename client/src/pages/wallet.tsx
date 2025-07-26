@@ -50,19 +50,19 @@ export default function Wallet() {
         transition={{ duration: 0.5 }}
         className="mb-6"
       >
-        <h1 className="text-2xl font-bold mb-6">My Wallet</h1>
+        <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>My Wallet</h1>
         
         <div className="grid gap-6 md:grid-cols-2">
           <motion.div variants={fadeIn}>
             <Card className="h-full">
               <CardHeader>
-                <CardTitle>Wallet Balance</CardTitle>
+                <CardTitle style={{ color: '#ffffff' }}>Wallet Balance</CardTitle>
                 <CardDescription>
                   Your available Bitcoin balance
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="bitcoin-gradient text-white rounded-lg p-6 mb-4">
+                <div className="bitcoin-gradient rounded-lg p-6 mb-4" style={{ color: '#ffffff' }}>
                   <div className="flex items-center mb-2">
                     <BitcoinIcon className="mr-2" size={24} />
                     <span className="text-sm">Available Balance</span>
@@ -77,10 +77,10 @@ export default function Wallet() {
                 
                 <div className="my-4">
                   {wallet.isConnected ? (
-                    <div className="flex items-center justify-between p-3 bg-muted rounded-md">
+                    <div className="flex items-center justify-between p-3 glass rounded-md">
                       <div>
-                        <div className="text-sm font-medium">Connected Wallet</div>
-                        <div className="text-sm text-muted-foreground">{shortenWalletAddress(wallet.address || '')}</div>
+                        <div className="text-sm font-medium" style={{ color: '#ffffff' }}>Connected Wallet</div>
+                        <div className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{shortenWalletAddress(wallet.address || '')}</div>
                       </div>
                       <Button variant="outline" size="sm" onClick={disconnect}>
                         Disconnect
@@ -115,7 +115,7 @@ export default function Wallet() {
           <motion.div variants={fadeIn}>
             <Card className="h-full">
               <CardHeader>
-                <CardTitle>Recent Transactions</CardTitle>
+                <CardTitle style={{ color: '#ffffff' }}>Recent Transactions</CardTitle>
                 <CardDescription>
                   Your latest wallet activity
                 </CardDescription>
@@ -123,12 +123,12 @@ export default function Wallet() {
               <CardContent>
                 {transactionsLoading ? (
                   <div className="py-8 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                    <p className="text-muted-foreground">Loading transactions...</p>
+                    <div className="loading-spinner mx-auto mb-4"></div>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading transactions...</p>
                   </div>
                 ) : recentTransactions.length === 0 ? (
                   <div className="py-8 text-center">
-                    <p className="text-muted-foreground mb-4">No transaction history yet</p>
+                    <p className="mb-4" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>No transaction history yet</p>
                     <Button variant="outline" onClick={handleDeposit}>Make Your First Deposit</Button>
                   </div>
                 ) : (

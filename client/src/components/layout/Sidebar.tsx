@@ -18,12 +18,7 @@ function SidebarItem({ href, icon, label, isActive }: SidebarItemProps) {
     <li className="mb-3">
       <Link href={href}>
         <div
-          className={cn(
-            "flex items-center p-4 rounded-2xl font-medium transition-all duration-300 group",
-            isActive
-              ? "glass-button text-white"
-              : "glass text-white/70 hover:text-white hover:bg-white/10"
-          )}
+          className={`sidebar-item ${isActive ? 'active' : ''}`}
         >
           <i className={`ri-${icon}-line mr-4 text-xl group-hover:scale-110 transition-transform duration-300`}></i>
           {label}
@@ -54,7 +49,7 @@ export function Sidebar() {
     : user?.btcBalance || 0;
 
   return (
-    <aside className="hidden lg:flex lg:flex-col lg:w-80 p-6 h-screen sticky top-0 custom-scrollbar overflow-y-auto relative z-20">
+    <aside className="hidden lg:flex lg:flex-col lg:w-80 p-6 h-screen fixed top-0 left-0 custom-scrollbar overflow-y-auto relative z-20">
       <div className="glass-card p-6 mb-8">
         <div className="flex items-center mb-8">
           <BitcoinIcon className="text-blue-400 text-4xl mr-3" />
@@ -67,7 +62,7 @@ export function Sidebar() {
               <span className="font-bold text-lg text-white">{initials}</span>
             </div>
             <div>
-              <p className="font-semibold text-white text-lg">{user?.username || "Anonymous"}</p>
+              <p className="font-semibold text-lg" style={{ color: '#ffffff' }}>{user?.username || "Anonymous"}</p>
               <p className="text-sm text-white/60 truncate">
                 {shortenWalletAddress(walletAddress || "")}
               </p>
@@ -78,8 +73,8 @@ export function Sidebar() {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
             <div className="relative z-10">
               <div className="flex justify-between items-center mb-3">
-                <span className="text-sm text-white/70">Portfolio Balance</span>
-                <span className="text-blue-400 font-semibold flex items-center">
+                <span className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Portfolio Balance</span>
+                <span className="font-semibold flex items-center" style={{ color: '#007aff' }}>
                   <BitcoinIcon className="mr-2" size={18} />
                   <span className="text-lg">{formatBTC(btcBalance)}</span>
                 </span>
@@ -108,14 +103,15 @@ export function Sidebar() {
       
       <div className="mt-6 glass-card p-6">
         <Link href="/help">
-          <div className="flex items-center p-4 rounded-2xl text-white/70 hover:text-white hover:bg-white/10 font-medium transition-all duration-300 mb-3">
+          <div className="sidebar-item mb-3">
             <i className="ri-question-line mr-4 text-xl"></i>
             Help & Support
           </div>
         </Link>
         <button 
           onClick={handleLogout}
-          className="flex items-center p-4 w-full text-left rounded-2xl text-red-400 hover:text-red-300 hover:bg-red-500/10 font-medium transition-all duration-300"
+          className="flex items-center p-4 w-full text-left rounded-2xl font-medium transition-all duration-300 glass hover:bg-red-500/10"
+          style={{ color: '#ff453a' }}
         >
           <i className="ri-logout-box-line mr-4 text-xl"></i>
           Log Out

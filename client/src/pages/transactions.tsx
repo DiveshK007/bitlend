@@ -72,24 +72,24 @@ export default function Transactions() {
         transition={{ duration: 0.5 }}
         className="mb-6"
       >
-        <h1 className="text-2xl font-bold mb-6">Transaction History</h1>
+        <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>Transaction History</h1>
         
         <div className="mb-6">
           <Card>
             <CardHeader>
-              <CardTitle>Transaction Overview</CardTitle>
+              <CardTitle style={{ color: '#ffffff' }}>Transaction Overview</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="h-[300px]">
                 {isLoading ? (
                   <div className="h-full flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                    <div className="loading-spinner"></div>
                   </div>
                 ) : chartDataArray.length > 0 ? (
                   <StatisticsChart data={chartDataArray} />
                 ) : (
                   <div className="h-full flex items-center justify-center">
-                    <p className="text-muted-foreground">No transaction data available</p>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>No transaction data available</p>
                   </div>
                 )}
               </div>
@@ -110,19 +110,18 @@ export default function Transactions() {
         >
           {isLoading ? (
             <div className="py-12 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Loading transaction history...</p>
+              <div className="loading-spinner mx-auto mb-4"></div>
+              <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Loading transaction history...</p>
             </div>
           ) : transactions?.length === 0 ? (
-            <Card>
-              <CardContent className="py-12 text-center">
-                <p className="text-muted-foreground">You don't have any transactions yet.</p>
-              </CardContent>
-            </Card>
+            <div className="empty-state">
+              <h3>No transactions yet</h3>
+              <p>Your transaction history will appear here once you start lending, borrowing, or making deposits.</p>
+            </div>
           ) : (
             Object.entries(transactionsByDate).map(([date, dayTransactions]: [string, any]) => (
               <motion.div key={date} variants={fadeIn} className="mb-6">
-                <h2 className="text-lg font-medium mb-3">{date}</h2>
+                <h2 className="text-lg font-medium mb-3" style={{ color: '#ffffff' }}>{date}</h2>
                 <Card>
                   <CardContent className="p-6">
                     <div className="space-y-4">

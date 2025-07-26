@@ -17,16 +17,16 @@ export function TransactionItem({ transaction }: TransactionItemProps) {
         <i className={`ri-${transactionIcon}-line`}></i>
       </div>
       <div className="flex-1">
-        <p className="font-medium">{transaction.description}</p>
-        <p className="text-xs text-muted-foreground">{formatDateRelative(transaction.createdAt)}</p>
+        <p className="font-medium" style={{ color: '#ffffff' }}>{transaction.description}</p>
+        <p className="text-xs" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{formatDateRelative(transaction.createdAt)}</p>
       </div>
       <div className="text-right">
-        <p className={`font-medium ${positive ? 'text-success' : 'text-destructive'} flex items-center justify-end`}>
+        <p className={`font-medium flex items-center justify-end`} style={{ color: positive ? '#22c55e' : '#ff453a' }}>
           <i className={`ri-${positive ? 'add' : 'subtract'}-line mr-1 text-xs`}></i>
           <span>{formatBTC(transaction.amount)}</span>
         </p>
         {transaction.usdValue && (
-          <p className="text-xs text-muted-foreground">{formatUSD(transaction.usdValue)}</p>
+          <p className="text-xs" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{formatUSD(transaction.usdValue)}</p>
         )}
       </div>
     </div>
