@@ -85,8 +85,8 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-[500px] glass-white">
         <DialogHeader>
-          <DialogTitle className="text-gray-900 font-bold">Offer a Loan</DialogTitle>
-          <DialogDescription className="text-gray-700">
+          <DialogTitle className="text-white font-bold">Offer a Loan</DialogTitle>
+          <DialogDescription className="text-white/70">
             Create a loan offer to lend your Bitcoin to borrowers.
           </DialogDescription>
         </DialogHeader>
@@ -98,20 +98,20 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               name="amount"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-gray-900 font-medium">Loan Amount (BTC)</FormLabel>
+                  <FormLabel className="text-white font-medium">Loan Amount (BTC)</FormLabel>
                   <FormControl>
-                    <div className="flex items-center space-x-4">
+                    <div className="space-y-4">
                       <Slider
                         min={0.01}
                         max={10}
                         step={0.01}
                         value={[field.value]}
                         onValueChange={(value) => field.onChange(value[0])}
-                        className="flex-1"
+                        className="w-full"
                       />
-                      <Input
+                      <input
                         type="number"
-                        className="w-20"
+                        className="w-full text-center text-xl font-bold glass-input-dark"
                         step={0.01}
                         min={0.01}
                         max={10}
@@ -125,7 +125,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
                       />
                     </div>
                   </FormControl>
-                  <FormDescription className="text-gray-600">
+                  <FormDescription className="text-white/70">
                     Amount of Bitcoin you want to lend
                   </FormDescription>
                   <FormMessage />
@@ -133,102 +133,138 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               )}
             />
             
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <FormField
+                control={form.control}
+                name="interest"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white font-medium">Interest Rate (%)</FormLabel>
+                    <FormControl>
+                      <div className="space-y-4">
+                        <Slider
+                          min={1}
+                          max={15}
+                          step={0.1}
+                          value={[field.value]}
+                          onValueChange={(value) => field.onChange(value[0])}
+                          className="w-full"
+                        />
+                        <input
+                          type="number"
+                          className="w-full text-center font-bold glass-input-dark"
+                          step={0.1}
+                          min={1}
+                          max={15}
+                          {...field}
+                          onChange={(e) => {
+                            const value = parseFloat(e.target.value);
+                            if (!isNaN(value)) {
+                              field.onChange(value);
+                            }
+                          }}
+                        />
+                      </div>
+                    </FormControl>
+                    <FormDescription className="text-white/70">
+                      Yearly interest rate you want to earn
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="durationMonths"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white font-medium">Duration (Months)</FormLabel>
+                    <FormControl>
+                      <div className="space-y-4">
+                        <Slider
+                          min={1}
+                          max={36}
+                          step={1}
+                          value={[field.value]}
+                          onValueChange={(value) => field.onChange(value[0])}
+                          className="w-full"
+                        />
+                        <input
+                          type="number"
+                          className="w-full text-center font-bold glass-input-dark"
+                          min={1}
+                          max={36}
+                          {...field}
+                          onChange={(e) => {
+                            const value = parseInt(e.target.value);
+                            if (!isNaN(value)) {
+                              field.onChange(value);
+                            }
+                          }}
+                        />
+                      </div>
+                    </FormControl>
+                    <FormDescription className="text-white/70">
+                      Loan repayment period
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            
             <FormField
               control={form.control}
-              name="interest"
+              name="hasCollateral"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-gray-900 font-medium">Interest Rate (%)</FormLabel>
+                <FormItem className="glass-card-subtle rounded-lg p-4 flex flex-row items-center justify-between">
+                  <div className="space-y-1">
+                    <FormLabel className="text-white font-medium text-base">Require Collateral</FormLabel>
+                    <FormDescription className="text-white/70">
+                      Require borrowers to provide collateral?
+                    </FormDescription>
+                  </div>
                   <FormControl>
-                    <div className="flex items-center space-x-4">
-                      <Slider
-                        min={1}
-                        max={15}
-                        step={0.1}
-                        value={[field.value]}
-                        onValueChange={(value) => field.onChange(value[0])}
-                        className="flex-1"
-                      />
-                      <Input
-                        type="number"
-                        className="w-20"
-                        step={0.1}
-                        min={1}
-                        max={15}
-                        {...field}
-                        onChange={(e) => {
-                          const value = parseFloat(e.target.value);
-                          if (!isNaN(value)) {
-                            field.onChange(value);
-                          }
-                        }}
-                      />
-                    </div>
+                    <Switch
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
                   </FormControl>
-                  <FormDescription className="text-gray-600">
-                    Yearly interest rate you want to earn
-                  </FormDescription>
-                  <FormMessage />
                 </FormItem>
               )}
             />
             
-            <FormField
-              control={form.control}
-              name="durationMonths"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-gray-900 font-medium">Duration (Months)</FormLabel>
-                  <FormControl>
-                    <div className="flex items-center space-x-4">
-                      <Slider
-                        min={1}
-                        max={36}
-                        step={1}
-                        value={[field.value]}
-                        onValueChange={(value) => field.onChange(value[0])}
-                        className="flex-1"
-                      />
-                      <Input
-                        type="number"
-                        className="w-20"
-                        min={1}
-                        max={36}
-                        {...field}
-                        onChange={(e) => {
-                          const value = parseInt(e.target.value);
-                          if (!isNaN(value)) {
-                            field.onChange(value);
-                          }
-                        }}
-                      />
-              )}
-            />
-            
-            <div className="p-4 glass-card-subtle rounded-lg">
-              <div className="flex justify-between mb-2">
-                <span className="text-sm text-white/70">Expected Return</span>
+            <div className="glass-card-subtle rounded-lg p-4 space-y-3">
+              <h3 className="text-white font-medium">Expected Returns</h3>
+              <div className="flex justify-between">
+                <span className="text-white/70">Expected Return</span>
                 <span className="font-medium text-white">{formatBTC(expectedReturn)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-white/70">Profit</span>
+                <span className="text-white/70">Profit</span>
                 <span className="font-medium text-green-400">{formatBTC(profitAmount)}</span>
               </div>
             </div>
             
-            <div className="flex gap-3 justify-end">
-              <Button type="button" variant="outline" onClick={onClose} className="glass-button-outline">
+            <div className="flex gap-3 justify-end pt-4">
+              <Button 
+                type="button" 
+                onClick={onClose}
+                className="px-8 py-3 glass-button-outline"
+              >
                 Cancel
               </Button>
-              <Button type="submit" className="glass-button-primary">
+              <Button 
+                type="submit"
+                className="px-8 py-3 glass-button-primary"
+              >
                 Create Loan Offer
               </Button>
             </div>
           </form>
         </Form>
       </DialogContent>
-              )
-              }
     </Dialog>
   );
 }
