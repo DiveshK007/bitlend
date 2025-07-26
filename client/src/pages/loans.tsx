@@ -53,7 +53,7 @@ export default function Loans() {
           <h1 className="text-2xl font-bold" style={{ color: '#ffffff' }}>My Loans</h1>
         </div>
 
-        <Card>
+        <Card className="glass-white">
           <Tabs defaultValue="borrowed">
             <CardContent className="pt-6">
               <TabsList className="grid grid-cols-2 mb-4 bg-gray-100">

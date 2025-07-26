@@ -31,7 +31,7 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[550px]">
+      <DialogContent className="sm:max-w-[550px] glass-white">
         <DialogHeader>
           <DialogTitle>Loan Details</DialogTitle>
           <DialogDescription>

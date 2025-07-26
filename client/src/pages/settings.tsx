@@ -137,7 +137,7 @@ export default function Settings() {
           </TabsList>
           
           <TabsContent value="profile">
-            <Card>
+            <Card className="glass-white">
               <CardHeader>
                 <CardTitle className="text-gray-900">Profile Information</CardTitle>
                 <CardDescription>
@@ -195,7 +195,7 @@ export default function Settings() {
           </TabsContent>
           
           <TabsContent value="security">
-            <Card>
+            <Card className="glass-white">
               <CardHeader>
                 <CardTitle className="text-gray-900">Security Settings</CardTitle>
                 <CardDescription>
@@ -260,7 +260,7 @@ export default function Settings() {
           </TabsContent>
           
           <TabsContent value="notifications">
-            <Card>
+            <Card className="glass-white">
               <CardHeader>
                 <CardTitle className="text-gray-900">Notification Preferences</CardTitle>
                 <CardDescription>

@@ -55,7 +55,7 @@ export default function Wallet() {
         
         <div className="grid gap-6 md:grid-cols-2">
           <motion.div variants={fadeIn}>
-            <Card className="h-full">
+            <Card className="glass-white h-full">
               <CardHeader>
                 <CardTitle className="text-gray-900">Wallet Balance</CardTitle>
                 <CardDescription>
@@ -114,7 +114,7 @@ export default function Wallet() {
           </motion.div>
           
           <motion.div variants={fadeIn}>
-            <Card className="h-full">
+            <Card className="glass-white h-full">
               <CardHeader>
                 <CardTitle className="text-gray-900">Recent Transactions</CardTitle>
                 <CardDescription>

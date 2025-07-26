@@ -36,7 +36,7 @@ export function LoanCard({
   const isBorrowing = loan.type === 'request';
 
   return (
-    <div className="loan-card h-full cursor-pointer" onClick={handleViewDetails}>
+    <div className="loan-card glass-white h-full cursor-pointer p-6" onClick={handleViewDetails}>
       <div className="flex justify-between items-start mb-4">
         <div>
           <span className={`text-xs py-2 px-3 rounded-full font-medium ${typeClass} glass`}>

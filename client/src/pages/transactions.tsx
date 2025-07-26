@@ -76,7 +76,7 @@ export default function Transactions() {
         <h1 className="text-2xl font-bold mb-6" style={{ color: '#ffffff' }}>Transaction History</h1>
         
         <div className="mb-6">
-          <Card>
+          <Card className="glass-white">
             <CardHeader>
               <CardTitle className="text-gray-900">Transaction Overview</CardTitle>
             </CardHeader>
@@ -123,7 +123,7 @@ export default function Transactions() {
             Object.entries(transactionsByDate).map(([date, dayTransactions]: [string, any]) => (
               <motion.div key={date} variants={fadeIn} className="mb-6">
                 <h2 className="text-lg font-medium mb-3" style={{ color: '#ffffff' }}>{date}</h2>
-                <Card>
+                <Card className="glass-white">
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       {dayTransactions.map((transaction: any) => (

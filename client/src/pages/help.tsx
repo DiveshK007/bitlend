@@ -40,7 +40,7 @@ export default function Help() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="col-span-2">
+        <Card className="glass-white col-span-2">
           <CardHeader>
             <CardTitle className="flex items-center text-gray-900">
               <BitcoinIcon className="mr-2" style={{ color: '#007aff' }} />
@@ -64,7 +64,7 @@ export default function Help() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="glass-white">
           <CardHeader>
             <CardTitle className="text-gray-900">Contact Support</CardTitle>
             <CardDescription>
@@ -89,7 +89,7 @@ export default function Help() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="glass-white">
           <CardHeader>
             <CardTitle className="text-gray-900">Resources</CardTitle>
             <CardDescription>

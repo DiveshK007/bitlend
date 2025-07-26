@@ -24,7 +24,7 @@ export function MarketplaceLoanCard({
   };
 
   return (
-    <div className="loan-card marketplace-card-hover">
+    <div className="loan-card glass-white marketplace-card-hover p-6">
       <div className="flex justify-between items-start mb-4">
         <div>
           <span className={`text-xs py-2 px-3 rounded-full font-medium ${typeClass} glass`}>

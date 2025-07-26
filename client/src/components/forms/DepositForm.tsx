@@ -79,7 +79,7 @@ export function DepositForm({ isOpen, onClose }: DepositFormProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[400px]">
+      <DialogContent className="sm:max-w-[400px] glass-white">
         <DialogHeader>
           <DialogTitle>Deposit Bitcoin</DialogTitle>
           <DialogDescription>

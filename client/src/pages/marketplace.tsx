@@ -90,7 +90,7 @@ export default function Marketplace() {
           </div>
         </div>
 
-        <Card>
+        <Card className="glass-white">
           <Tabs defaultValue="requests">
             <CardContent className="pt-6">
               <TabsList className="grid grid-cols-2 mb-4 bg-gray-100">

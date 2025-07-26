@@ -84,7 +84,7 @@ export function RepaymentForm({ loan, isOpen, onClose, onSuccess }: RepaymentFor
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[400px]">
+      <DialogContent className="sm:max-w-[400px] glass-white">
         <DialogHeader>
           <DialogTitle>Loan Repayment</DialogTitle>
           <DialogDescription>
