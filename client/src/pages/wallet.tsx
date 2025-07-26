@@ -78,12 +78,12 @@ export default function Wallet() {
                 
                 <div className="my-4">
                   {wallet.isConnected ? (
-                    <div className="flex items-center justify-between p-3 border border-gray-300 rounded-md bg-gray-50">
+                    <div className="flex items-center justify-between p-3 glass-card-subtle rounded-md">
                       <div>
-                        <div className="text-sm font-medium text-gray-900">Connected Wallet</div>
-                        <div className="text-sm text-gray-600">{shortenWalletAddress(wallet.address || '')}</div>
+                        <div className="text-sm font-medium text-white">Connected Wallet</div>
+                        <div className="text-sm text-white/70">{shortenWalletAddress(wallet.address || '')}</div>
                       </div>
-                      <Button variant="outline" size="sm" onClick={disconnect} className="text-gray-700 border-gray-300 hover:bg-gray-50">
+                      <Button size="sm" onClick={disconnect} className="glass-button-outline">
                         Disconnect
                       </Button>
                     </div>
@@ -92,7 +92,7 @@ export default function Wallet() {
                       className="w-full" 
                       onClick={() => setIsWalletModalOpen(true)}
                       disabled={isConnecting}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-md font-medium"
+                      className="w-full glass-button-primary p-3 rounded-md font-medium"
                     >
                       <i className="ri-wallet-3-line mr-2"></i>
                       {isConnecting ? "Connecting..." : "Connect Wallet"}
@@ -102,10 +102,10 @@ export default function Wallet() {
               </CardContent>
               <CardFooter>
                 <div className="flex flex-col sm:flex-row gap-3 w-full">
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={handleDeposit}>
+                  <Button className="w-full glass-button-primary" onClick={handleDeposit}>
                     <i className="ri-add-line mr-2"></i> Deposit
                   </Button>
-                  <Button className="w-full bg-gray-400 text-white cursor-not-allowed" disabled>
+                  <Button className="w-full glass-button-disabled cursor-not-allowed" disabled>
                     <i className="ri-arrow-left-right-line mr-2"></i> Transfer
                   </Button>
                 </div>
@@ -130,7 +130,7 @@ export default function Wallet() {
                 ) : recentTransactions.length === 0 ? (
                   <div className="py-8 text-center">
                     <p className="mb-4 text-gray-600">No transaction history yet</p>
-                    <Button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white" onClick={handleDeposit}>Make First Deposit</Button>
+                    <Button className="px-4 py-2 glass-button-primary" onClick={handleDeposit}>Make First Deposit</Button>
                   </div>
                 ) : (
                   <div className="space-y-4">
@@ -141,7 +141,7 @@ export default function Wallet() {
                 )}
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" asChild>
+                <Button className="w-full glass-button-primary" asChild>
                   <Link href="/transactions">View All Transactions</Link>
                 </Button>
               </CardFooter>

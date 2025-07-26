@@ -123,11 +123,11 @@ export function LoanDetailsDialog({ loan, isOpen, onClose, onRepay }: LoanDetail
         
         <DialogFooter className="gap-2 sm:gap-0">
           {isBorrowing && loan.status === 'active' && onRepay && (
-            <Button onClick={onRepay} className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button onClick={onRepay} className="glass-button-primary">
               Make Repayment
             </Button>
           )}
-          <Button variant="outline" onClick={onClose} className="text-gray-700 border-gray-300 hover:bg-gray-50">
+          <Button onClick={onClose} className="glass-button-outline">
             Close
           </Button>
         </DialogFooter>

@@ -154,7 +154,7 @@ export default function Settings() {
                         <FormItem>
                           <FormLabel className="text-gray-900 font-medium">Username</FormLabel>
                           <FormControl>
-                            <input className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900" placeholder="Your username" {...field} />
+                            <input className="w-full p-3 glass-input-dark rounded-md" placeholder="Your username" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -168,7 +168,7 @@ export default function Settings() {
                         <FormItem>
                           <FormLabel className="text-gray-900 font-medium">Email</FormLabel>
                           <FormControl>
-                            <input className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900" placeholder="Your email address" {...field} />
+                            <input className="w-full p-3 glass-input-dark rounded-md" placeholder="Your email address" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -177,15 +177,15 @@ export default function Settings() {
                     
                     <div>
                       <FormLabel className="text-gray-900 font-medium">Wallet Address</FormLabel>
-                      <div className="flex items-center p-3 border border-gray-300 rounded-md bg-gray-50">
-                        <span className="text-sm text-gray-600">{shortenWalletAddress(user?.walletAddress || "")}</span>
+                      <div className="flex items-center p-3 glass-card-subtle rounded-md">
+                        <span className="text-sm text-white/70">{shortenWalletAddress(user?.walletAddress || "")}</span>
                       </div>
                       <FormDescription className="text-gray-600">
                         Your connected wallet address
                       </FormDescription>
                     </div>
                     
-                    <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white" disabled={isSubmitting}>
+                    <Button type="submit" className="glass-button-primary" disabled={isSubmitting}>
                       {isSubmitting ? "Saving..." : "Save Changes"}
                     </Button>
                   </form>
@@ -210,7 +210,7 @@ export default function Settings() {
                       name="currentPassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="form-label">Current Password</FormLabel>
+                          <FormLabel className="text-white font-medium">Current Password</FormLabel>
                           <FormControl>
                             <input type="password" className="glass-input w-full" placeholder="••••••••" {...field} />
                           </FormControl>
@@ -224,11 +224,11 @@ export default function Settings() {
                       name="newPassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="form-label">New Password</FormLabel>
+                          <FormLabel className="text-white font-medium">New Password</FormLabel>
                           <FormControl>
                             <input type="password" className="glass-input w-full" placeholder="••••••••" {...field} />
                           </FormControl>
-                          <FormDescription className="form-description">
+                          <FormDescription className="text-white/60">
                             Password must be at least 6 characters
                           </FormDescription>
                           <FormMessage />
@@ -241,7 +241,7 @@ export default function Settings() {
                       name="confirmPassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="form-label">Confirm New Password</FormLabel>
+                          <FormLabel className="text-white font-medium">Confirm New Password</FormLabel>
                           <FormControl>
                             <input type="password" className="glass-input w-full" placeholder="••••••••" {...field} />
                           </FormControl>
@@ -276,8 +276,8 @@ export default function Settings() {
                       render={({ field }) => (
                         <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="form-label text-base">Loan Updates</FormLabel>
-                            <FormDescription className="form-description">
+                            <FormLabel className="text-white font-medium text-base">Loan Updates</FormLabel>
+                            <FormDescription className="text-white/60">
                               Receive notifications about your active loans
                             </FormDescription>
                           </div>
@@ -297,8 +297,8 @@ export default function Settings() {
                       render={({ field }) => (
                         <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="form-label text-base">Marketplace Alerts</FormLabel>
-                            <FormDescription className="form-description">
+                            <FormLabel className="text-white font-medium text-base">Marketplace Alerts</FormLabel>
+                            <FormDescription className="text-white/60">
                               Get notified about new matching loan opportunities
                             </FormDescription>
                           </div>
@@ -318,8 +318,8 @@ export default function Settings() {
                       render={({ field }) => (
                         <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="form-label text-base">Security Alerts</FormLabel>
-                            <FormDescription className="form-description">
+                            <FormLabel className="text-white font-medium text-base">Security Alerts</FormLabel>
+                            <FormDescription className="text-white/60">
                               Critical security notifications about your account
                             </FormDescription>
                           </div>
@@ -339,8 +339,8 @@ export default function Settings() {
                       render={({ field }) => (
                         <FormItem className="flex flex-row items-center justify-between glass rounded-lg p-4">
                           <div className="space-y-0.5">
-                            <FormLabel className="form-label text-base">Marketing Emails</FormLabel>
-                            <FormDescription className="form-description">
+                            <FormLabel className="text-white font-medium text-base">Marketing Emails</FormLabel>
+                            <FormDescription className="text-white/60">
                               Receive news, updates and offers about BitLend
                             </FormDescription>
                           </div>

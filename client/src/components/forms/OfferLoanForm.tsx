@@ -203,23 +203,23 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
                         }}
                       />
                     </div>
-                  </FormControl>
-                  <FormDescription className="text-gray-600">
-                    Loan repayment period
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
-            <FormField
-              control={form.control}
-              name="hasCollateral"
-              render={({ field }) => (
-                <FormItem className="flex flex-row items-center justify-between p-4 border rounded-md">
+                        <input
+                        <input
+                          type="number"
+                          className="w-20 glass-input-dark text-center font-bold"
+                          min={1}
+                          max={36}
+                          {...field}
+                          onChange={(e) => {
+                            const value = parseInt(e.target.value);
+                            if (!isNaN(value)) {
+                              field.onChange(value);
+                            }
+                          }}
+                <FormItem className="flex flex-row items-center justify-between p-4 glass-card-subtle rounded-lg">
                   <div className="space-y-0.5">
-                    <FormLabel className="text-gray-900 font-medium">Require Collateral</FormLabel>
-                    <FormDescription className="text-gray-600">
+                    <FormLabel className="text-white font-medium">Require Collateral</FormLabel>
+                    <FormDescription className="text-white/70">
                       Require borrowers to provide collateral?
                     </FormDescription>
                   </div>
@@ -233,22 +233,22 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
               )}
             />
             
-            <div className="p-4 border rounded-md bg-gray-50">
+            <div className="p-4 glass-card-subtle rounded-lg">
               <div className="flex justify-between mb-2">
-                <span className="text-sm text-gray-600">Expected Return</span>
-                <span className="font-medium text-gray-900">{formatBTC(expectedReturn)}</span>
+                <span className="text-sm text-white/70">Expected Return</span>
+                <span className="font-medium text-white">{formatBTC(expectedReturn)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Profit</span>
-                <span className="font-medium text-green-600">{formatBTC(profitAmount)}</span>
+                <span className="text-sm text-white/70">Profit</span>
+                <span className="font-medium text-green-400">{formatBTC(profitAmount)}</span>
               </div>
             </div>
             
             <div className="flex gap-3 justify-end">
-              <Button type="button" variant="outline" onClick={onClose} className="text-gray-700 border-gray-300 hover:bg-gray-50">
+              <Button type="button" variant="outline" onClick={onClose} className="glass-button-outline">
                 Cancel
               </Button>
-              <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button type="submit" className="glass-button-primary">
                 Create Loan Offer
               </Button>
             </div>

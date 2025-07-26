@@ -103,7 +103,7 @@ export function DepositForm({ isOpen, onClose }: DepositFormProps) {
                   <FormControl>
                     <input
                       type="number"
-                      className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900"
+                      className="w-full p-3 glass-input-dark rounded-md"
                       step={0.001}
                       min={0.001}
                       max={walletBalance}
@@ -124,18 +124,18 @@ export function DepositForm({ isOpen, onClose }: DepositFormProps) {
               )}
             />
             
-            <div className="flex justify-between text-sm p-3 border border-gray-300 rounded-md bg-gray-50">
-              <span className="text-gray-600">Approximate USD value:</span>
-              <span className="font-medium text-gray-900">{formatUSD(usdValue)}</span>
+            <div className="flex justify-between text-sm p-3 glass-card-subtle rounded-md">
+              <span className="text-white/70">Approximate USD value:</span>
+              <span className="font-medium text-white">{formatUSD(usdValue)}</span>
             </div>
             
             <div className="flex gap-3 justify-end">
-              <Button type="button" variant="outline" onClick={onClose} className="text-gray-700 border-gray-300 hover:bg-gray-50">
+              <Button type="button" onClick={onClose} className="glass-button-outline">
                 Cancel
               </Button>
               <Button 
                 type="submit" 
-                className="bg-blue-600 hover:bg-blue-700 text-white"
+                className="glass-button-primary"
                 disabled={isSubmitting || depositAmount > walletBalance}
               >
                 {isSubmitting ? "Processing..." : "Deposit Funds"}
