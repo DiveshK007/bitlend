@@ -123,10 +123,10 @@ export function RequestLoanForm({ isOpen, onClose, onSuccess }: RequestLoanFormP
                               field.onChange(value);
                             }
                           }}
-                <FormItem className="p-6 glass-card-subtle rounded-lg flex flex-row items-center justify-between">
+                        />
                       </div>
-                    <FormLabel className="text-white font-medium text-base">Collateral</FormLabel>
-                    <FormDescription className="text-white/70">
+                    </FormControl>
+                    <FormDescription className="text-gray-600">
                       Amount of Bitcoin you want to borrow
                     </FormDescription>
                     <FormMessage />
