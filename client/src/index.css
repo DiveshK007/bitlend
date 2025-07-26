@@ -1079,6 +1079,32 @@ input, textarea {
   backdrop-filter: blur(20px);
 }
 
+/* Dialog Visibility Fix */
+[data-radix-popper-content-wrapper] {
+  z-index: 9999 !important;
+}
+
+[role="dialog"] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 9999 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid #000 !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  min-width: 400px !important;
+  min-height: 200px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-state="open"][role="dialog"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /* Biometric Button */
 .biometric-button {
   background: linear-gradient(135deg, rgba(52, 199, 89, 0.8), rgba(48, 176, 199, 0.8));
