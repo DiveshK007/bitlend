@@ -98,8 +98,12 @@ export default function Marketplace() {
           <Tabs defaultValue="requests">
             <CardContent className="pt-6">
               <TabsList className="grid grid-cols-2 mb-4 bg-gray-100">
-                <TabsTrigger value="requests">Loan Requests</TabsTrigger>
-                <TabsTrigger value="offers">Loan Offers</TabsTrigger>
+                <TabsTrigger value="requests" className="text-gray-700 data-[state=active]:text-gray-900 data-[state=active]:bg-white font-medium">
+                  Loan Requests
+                </TabsTrigger>
+                <TabsTrigger value="offers" className="text-gray-700 data-[state=active]:text-gray-900 data-[state=active]:bg-white font-medium">
+                  Loan Offers
+                </TabsTrigger>
               </TabsList>
               
               <TabsContent value="requests">
