@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
       <MobileHeader />
       <Sidebar />
       
-      <main className="lg:pl-80 lg:pt-24 w-full">
+      <main className="lg:pl-80 lg:pt-28 w-full">
         {children}
       </main>
       

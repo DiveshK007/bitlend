@@ -89,7 +89,7 @@ body {
 @media (min-width: 1024px) {
   .main-content {
     padding-left: 320px;
-    padding-top: 120px; /* Account for fixed header */
+    padding-top: 140px; /* Account for fixed header */
   }
 }
 

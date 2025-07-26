@@ -77,7 +77,7 @@ export default function Dashboard() {
         <div className="relative z-10">
         {/* Hero Welcome Section */}
         <motion.div
-          className="mb-12"
+          className="mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -122,7 +122,7 @@ export default function Dashboard() {
         
         {/* Stats Overview */}
         <motion.div 
-          className="mb-12"
+          className="mb-8"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
