@@ -30,15 +30,15 @@ export function DesktopHeader() {
   };
 
   return (
-    <header className="hidden lg:block glass-card mx-6 mt-6 mb-4 p-4 sticky top-6 z-30">
+    <header className="hidden lg:block glass-card mx-6 mt-6 mb-4 p-6 sticky top-6 z-30 w-auto">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <h1 className="text-2xl font-bold text-white">{getPageTitle()}</h1>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
           <div className="relative">
             <input
               type="text"
               placeholder="Search loans, transactions..."
-              className="glass-input w-80 pl-12 pr-4 py-3 text-white placeholder-white/50"
+              className="glass-input w-96 pl-12 pr-4 py-3 text-white placeholder-white/50"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

@@ -49,7 +49,7 @@ export function Sidebar() {
     : user?.btcBalance || 0;
 
   return (
-    <aside className="hidden lg:flex lg:flex-col lg:w-80 p-6 h-screen fixed top-0 left-0 custom-scrollbar overflow-y-auto relative z-20">
+    <aside className="hidden lg:flex lg:flex-col lg:w-80 p-6 h-screen fixed top-0 left-0 custom-scrollbar overflow-y-auto relative z-20 bg-transparent">
       <div className="glass-card p-6 mb-8">
         <div className="flex items-center mb-8">
           <BitcoinIcon className="text-blue-400 text-4xl mr-3" />
