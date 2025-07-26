@@ -106,8 +106,8 @@ export default function Marketplace() {
                   </div>
                 ) : requestLoans.length === 0 ? (
                   <div className="empty-state">
-                    <h3>No loan requests available</h3>
-                    <p>Be the first to create a loan offer and start earning interest on your Bitcoin.</p>
+                    <h3 className="text-gray-900 font-bold text-xl mb-3">No loan requests available</h3>
+                    <p className="text-gray-700 mb-4">Be the first to create a loan offer and start earning interest on your Bitcoin.</p>
                     <Button onClick={() => setShowOfferForm(true)}>Create a Loan Offer</Button>
                   </div>
                 ) : (
@@ -144,8 +144,8 @@ export default function Marketplace() {
                   </div>
                 ) : offerLoans.length === 0 ? (
                   <div className="empty-state">
-                    <h3>No loan offers available</h3>
-                    <p>Create a loan request to attract lenders and get the funding you need.</p>
+                    <h3 className="text-gray-900 font-bold text-xl mb-3">No loan offers available</h3>
+                    <p className="text-gray-700 mb-4">Create a loan request to attract lenders and get the funding you need.</p>
                     <Button onClick={() => setShowRequestForm(true)}>Create a Loan Request</Button>
                   </div>
                 ) : (

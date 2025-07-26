@@ -48,24 +48,24 @@ export function LoanCard({
           </h3>
         </div>
         <div className="text-right">
-          <p className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Interest Rate</p>
+          <p className="text-sm text-gray-600">Interest Rate</p>
           <p className="font-bold text-lg" style={{ color: '#007aff' }}>{loan.interest}%</p>
         </div>
       </div>
       
-      <div className="grid grid-cols-3 gap-4 text-sm mb-6 text-gray-600">
+      <div className="grid grid-cols-3 gap-4 text-sm mb-6">
         <div>
-          <p className="mb-1">Duration</p>
+          <p className="mb-1 text-gray-600 font-medium">Duration</p>
           <p className="font-medium text-gray-900">{loan.durationMonths} months</p>
         </div>
         <div>
-          <p className="mb-1">Status</p>
+          <p className="mb-1 text-gray-600 font-medium">Status</p>
           <p className={`text-xs py-1 px-2 rounded-full font-medium ${statusClass} glass`}>
             {loan.status.charAt(0).toUpperCase() + loan.status.slice(1)}
           </p>
         </div>
         <div>
-          <p className="mb-1">Collateral</p>
+          <p className="mb-1 text-gray-600 font-medium">Collateral</p>
           <p className="font-medium text-gray-900">{loan.hasCollateral ? 'Yes' : 'No'}</p>
         </div>
       </div>
