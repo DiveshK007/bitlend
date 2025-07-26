@@ -84,7 +84,11 @@ export default function Marketplace() {
             <Button onClick={() => setShowRequestForm(true)}>
               <i className="ri-add-line mr-2"></i> Request Loan
             </Button>
-            <Button variant="outline" onClick={() => setShowOfferForm(true)}>
+            <Button 
+              variant="outline" 
+              onClick={() => setShowOfferForm(true)}
+              className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+            >
               <i className="ri-coin-line mr-2"></i> Offer Loan
             </Button>
           </div>
