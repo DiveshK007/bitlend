@@ -163,6 +163,20 @@ export class MemStorage implements IStorage {
     this.createLoan(loan6);
     this.createLoan(loan7);
     
+    // Add another lent loan example
+    const loan8: InsertLoan = {
+      borrowerId: undefined,
+      lenderId: user.id,
+      amount: 0.8,
+      interest: 5.5,
+      durationMonths: 9,
+      status: "active",
+      type: "offer",
+      hasCollateral: true,
+    };
+    
+    this.createLoan(loan8);
+    
     // Create some sample transactions
     const transaction1: InsertTransaction = {
       userId: user.id,

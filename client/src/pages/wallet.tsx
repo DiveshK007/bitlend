@@ -88,26 +88,26 @@ export default function Wallet() {
                       </Button>
                     </div>
                   ) : (
-                    <Button 
-                      variant="outline" 
+                    <button 
                       className="w-full" 
                       onClick={() => setIsWalletModalOpen(true)}
                       disabled={isConnecting}
+                      className="glass-button w-full"
                     >
                       <i className="ri-wallet-3-line mr-2"></i>
                       {isConnecting ? "Connecting..." : "Connect Wallet"}
-                    </Button>
+                    </button>
                   )}
                 </div>
               </CardContent>
               <CardFooter>
                 <div className="flex flex-col sm:flex-row gap-3 w-full">
-                  <Button className="w-full" onClick={handleDeposit}>
+                  <button className="glass-button w-full" onClick={handleDeposit}>
                     <i className="ri-add-line mr-2"></i> Deposit
-                  </Button>
-                  <Button variant="outline" className="w-full" disabled>
+                  </button>
+                  <button className="glass-button w-full opacity-50" disabled>
                     <i className="ri-arrow-left-right-line mr-2"></i> Transfer
-                  </Button>
+                  </button>
                 </div>
               </CardFooter>
             </Card>
@@ -130,7 +130,7 @@ export default function Wallet() {
                 ) : recentTransactions.length === 0 ? (
                   <div className="py-8 text-center">
                     <p className="mb-4" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>No transaction history yet</p>
-                    <Button variant="outline" onClick={handleDeposit}>Make Your First Deposit</Button>
+                    <button className="glass-button" onClick={handleDeposit}>Make Your First Deposit</button>
                   </div>
                 ) : (
                   <div className="space-y-4">
@@ -141,9 +141,9 @@ export default function Wallet() {
                 )}
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full" asChild>
+                <button className="glass-button w-full" asChild>
                   <Link href="/transactions">View All Transactions</Link>
-                </Button>
+                </button>
               </CardFooter>
             </Card>
           </motion.div>
