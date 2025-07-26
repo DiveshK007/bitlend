@@ -65,7 +65,8 @@ export default function Transactions() {
   const chartDataArray = chartData ? Object.values(chartData) : [];
 
   return (
-    <div className="p-6 w-full">
+    <div className="page-container">
+      <div className="content-wrapper">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -136,6 +137,7 @@ export default function Transactions() {
           )}
         </motion.div>
       </motion.div>
+      </div>
     </div>
   );
 }

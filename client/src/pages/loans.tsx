@@ -41,7 +41,8 @@ export default function Loans() {
   };
 
   return (
-    <div className="p-6 w-full">
+    <div className="page-container">
+      <div className="content-wrapper">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -158,6 +159,7 @@ export default function Loans() {
           />
         </>
       )}
+      </div>
     </div>
   );
 }

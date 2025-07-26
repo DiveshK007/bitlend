@@ -30,8 +30,9 @@ export function DesktopHeader() {
   };
 
   return (
-    <header className="hidden lg:block glass-card mx-6 mt-6 mb-4 p-6 sticky top-6 z-30 w-auto">
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
+    <header className="hidden lg:block fixed top-6 left-80 right-6 z-30">
+      <div className="glass-card p-6">
+        <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-white">{getPageTitle()}</h1>
         <div className="flex items-center space-x-6">
           <div className="relative">
@@ -52,6 +53,7 @@ export function DesktopHeader() {
           
           <UserProfileDropdown />
         </div>
+      </div>
       </div>
     </header>
   );

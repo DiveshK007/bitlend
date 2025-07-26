@@ -32,7 +32,8 @@ export default function Help() {
   ];
 
   return (
-    <div className="p-6 w-full max-w-6xl mx-auto">
+    <div className="page-container">
+      <div className="content-wrapper max-w-6xl mx-auto">
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-2" style={{ color: '#ffffff' }}>Help & Support</h1>
         <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Find answers to common questions about using BitLend</p>
@@ -116,6 +117,7 @@ export default function Help() {
             </ul>
           </CardContent>
         </Card>
+      </div>
       </div>
     </div>
   );

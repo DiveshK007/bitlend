@@ -49,7 +49,8 @@ export function Sidebar() {
     : user?.btcBalance || 0;
 
   return (
-    <aside className="hidden lg:flex lg:flex-col lg:w-80 h-screen fixed top-0 left-0 custom-scrollbar overflow-y-auto relative z-20 bg-transparent">
+    <aside className="hidden lg:flex lg:flex-col w-80 h-screen fixed top-0 left-0 z-40 bg-transparent">
+      <div className="h-full overflow-y-auto custom-scrollbar">
       <div className="p-6 space-y-6 h-full flex flex-col">
         <div className="glass-card p-6">
           <div className="flex items-center mb-6">
@@ -115,6 +116,7 @@ export function Sidebar() {
             Log Out
           </button>
         </div>
+      </div>
       </div>
     </aside>
   );
